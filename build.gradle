@@ -4,7 +4,7 @@ plugins {
     id 'org.openjfx.javafxplugin' version '0.0.10'
 }
 
-group 'org.example'
+group 'org.project'
 version '1.0-SNAPSHOT'
 
 repositories {
@@ -26,7 +26,7 @@ test {
 }
 
 application {
-    getMainClass().set('agh.ics.oop.World')
+    getMainClass().set('org.project.Main')
 }
 java {
     toolchain {

@@ -10,19 +10,7 @@ public enum MoveDirection {
     WW,
     NW;
 
-    public static MoveDirection toMoveDirection(int x) throws IllegalArgumentException{
-        return switch(x){
-            case 0 -> MoveDirection.NN;
-            case 1 -> MoveDirection.NE;
-            case 2 -> MoveDirection.EE;
-            case 3 -> MoveDirection.SE;
-            case 4 -> MoveDirection.SS;
-            case 5 -> MoveDirection.SW;
-            case 6 -> MoveDirection.WW;
-            case 7 -> MoveDirection.NW;
-            default -> throw new IllegalArgumentException("There is no such direction");
-        };
-    }
+    public static final MoveDirection[] directions = values();
     @Override
     public String toString(){
         return switch (this){
