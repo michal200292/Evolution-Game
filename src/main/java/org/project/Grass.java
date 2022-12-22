@@ -1,9 +1,10 @@
 package org.project;
 
 public class Grass {
-    public static int energy;
+    public int energy;
     Vector2d position;
-    public Grass(Vector2d position){
+    public Grass(Vector2d position, int energy){
+        this.energy = energy;
         this.position = position;
     }
 }

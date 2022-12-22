@@ -11,9 +11,9 @@ public class RNG {
         return MoveDirection.directions[randomNumber(0, 7)];
     }
 
-    public static int[] generateGenes(){
-        int[] genes = new int[Animal.numberOfGenes];
-        for(int i = 0; i < Animal.numberOfGenes; i++){
+    public static int[] generateGenes(int n){
+        int[] genes = new int[n];
+        for(int i = 0; i < n; i++){
             genes[i] = randomNumber(0, 7);
         }
         return genes;

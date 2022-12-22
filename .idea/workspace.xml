@@ -5,14 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e5f0b2b-cde3-496f-9a1d-16b05f1172ab" name="Changes" comment="ProjectStart">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/Animal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/GenesCreators/GenesCreators.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/Grass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/RNG.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_18_2022_11_30_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_18_2022_11_30_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/MoveDirection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/MoveDirection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/Animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/GenesCreators/GenesCreators.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/Grass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/Grass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/RNG.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/RNG.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +26,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
         <option value="Interface" />
       </list>
     </option>
@@ -50,8 +49,9 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;
   }
 }</component>
   <component name="RunManager" selected="Application.org.project.Main">
@@ -96,9 +96,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670243318295</updated>
-      <workItem from="1670243320620" duration="431000" />
-      <workItem from="1671406140765" duration="2480000" />
-      <workItem from="1671489411917" duration="7809000" />
+      <workItem from="1670243320620" duration="2593000" />
+      <workItem from="1670257115715" duration="28000" />
+      <workItem from="1670846752548" duration="1496000" />
+      <workItem from="1670849898006" duration="644000" />
+      <workItem from="1670850952867" duration="636000" />
+      <workItem from="1671270769561" duration="6700000" />
     </task>
     <task id="LOCAL-00001" summary="ProjectStart">
       <created>1670243540086</created>
@@ -107,7 +110,28 @@
       <option name="project" value="LOCAL" />
       <updated>1670243540086</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="ProjectStart">
+      <created>1670243814519</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1670243814519</updated>
+    </task>
+    <task id="LOCAL-00003" summary="ProjectStart">
+      <created>1670850878790</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1670850878790</updated>
+    </task>
+    <task id="LOCAL-00004" summary="ProjectStart">
+      <created>1670850980760</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1670850980760</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
