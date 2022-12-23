@@ -18,4 +18,15 @@ public class RNG {
         }
         return genes;
     }
+
+    public static void shuffle(int[] tab){
+        int n = tab.length;
+        for(int i = 0; i < n; ++i){
+            int index1 = RNG.randomNumber(0, n - 1);
+            int index2 = RNG.randomNumber(0, n - 1);
+            int temp = tab[index1];
+            tab[index1] = tab[index2];
+            tab[index2] = temp;
+        }
+    }
 }
