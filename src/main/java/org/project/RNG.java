@@ -3,7 +3,7 @@ package org.project;
 import java.util.Random;
 
 public class RNG {
-    private static final Random r = new ThreadLocal<Random>().get();
+    private static final Random r = new Random();
     public static int randomNumber(int a, int b){
         return r.nextInt(a, b + 1);
     }

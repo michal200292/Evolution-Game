@@ -5,17 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e5f0b2b-cde3-496f-9a1d-16b05f1172ab" name="Changes" comment="GeneCreator">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/GenesCreators/AbstractMutationClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/GenesCreators/FullRandom.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/GenesCreators/GenesCreator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/GenesCreators/LittleChange.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/GenesCreators/Mutation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/MoveVariants/CrazyMovement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/MoveVariants/MoveType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/MoveVariants/NormalMovement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/GenesCreators/GeneCreator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/project/RNG.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/RNG.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,18 +40,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "inlay.hints"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.org.project.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
@@ -109,6 +100,7 @@
       <workItem from="1670849898006" duration="644000" />
       <workItem from="1670850952867" duration="636000" />
       <workItem from="1671270769561" duration="6700000" />
+      <workItem from="1671833362936" duration="312000" />
     </task>
     <task id="LOCAL-00001" summary="ProjectStart">
       <created>1670243540086</created>
@@ -152,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671749481572</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="GeneCreator">
+      <created>1671756021192</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1671756021192</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
