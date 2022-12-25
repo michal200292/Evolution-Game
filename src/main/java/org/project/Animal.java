@@ -1,5 +1,7 @@
 package org.project;
 
+import org.project.MoveVariants.IMoveType;
+
 import java.util.Arrays;
 
 public class Animal {
@@ -11,9 +13,11 @@ public class Animal {
     public int activeGene;
     public int numberOfChildren;
 
+    public IMoveType nextMove;
+
     public Animal(){}
 
-    public Animal(Vector2d position, int energy, int numberOfGenes){
+    public Animal(Vector2d position, int energy, int numberOfGenes, IMoveType nextMove){
         this.orientation = RNG.randomEnum();
         this.position = position;
         this.energy = energy;
@@ -21,9 +25,10 @@ public class Animal {
         this.genes = RNG.generateGenes(numberOfGenes);
         this.activeGene = RNG.randomNumber(0, numberOfGenes - 1);
         this.numberOfChildren = 0;
+        this.nextMove = nextMove;
     }
 
-    public Animal(Vector2d position, int energy, int numberOfGenes, int[] genes){
+    public Animal(Vector2d position, int energy, int numberOfGenes, int[] genes, IMoveType nextMove){
         this.orientation = RNG.randomEnum();
         this.position = position;
         this.energy = energy;
@@ -31,6 +36,7 @@ public class Animal {
         this.genes = genes;
         this.activeGene = RNG.randomNumber(0, numberOfGenes - 1);
         this.numberOfChildren = 0;
+        this.nextMove = nextMove;
     }
 
     @Override

@@ -1,5 +1,5 @@
 package org.project.MoveVariants;
 
-public interface MoveType {
+public interface IMoveType {
     int getNext(int pointer, int n);
 }

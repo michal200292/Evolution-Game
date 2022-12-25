@@ -5,9 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e5f0b2b-cde3-496f-9a1d-16b05f1172ab" name="Changes" comment="GeneCreator">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/Maps/AbstractWorldMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/Maps/IWorldMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/Animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/GenesCreators/AbstractMutationClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/GenesCreators/AbstractMutationClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/GenesCreators/GenesCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/GenesCreators/GenesCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/GenesCreators/Mutation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/GenesCreators/IMutation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/project/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/RNG.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/RNG.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/MoveVariants/CrazyMovement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/MoveVariants/CrazyMovement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/MoveVariants/MoveType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/MoveVariants/IMoveType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/MoveVariants/NormalMovement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/MoveVariants/NormalMovement.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +37,12 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -100,7 +114,9 @@
       <workItem from="1670849898006" duration="644000" />
       <workItem from="1670850952867" duration="636000" />
       <workItem from="1671270769561" duration="6700000" />
-      <workItem from="1671833362936" duration="312000" />
+      <workItem from="1671833362936" duration="2126000" />
+      <workItem from="1671835549204" duration="169000" />
+      <workItem from="1672001864639" duration="519000" />
     </task>
     <task id="LOCAL-00001" summary="ProjectStart">
       <created>1670243540086</created>
@@ -151,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671756021192</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="GeneCreator">
+      <created>1671833938468</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1671833938468</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

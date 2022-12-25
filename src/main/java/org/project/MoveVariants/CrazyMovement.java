@@ -2,7 +2,7 @@ package org.project.MoveVariants;
 
 import org.project.RNG;
 
-public class CrazyMovement implements MoveType{
+public class CrazyMovement implements IMoveType {
     public int getNext(int pointer, int n){
         if(RNG.randomNumber(1, 5) <= 4){
             return (pointer + 1) % n;

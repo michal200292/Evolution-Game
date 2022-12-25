@@ -1,5 +1,5 @@
 package org.project.GenesCreators;
 
-public interface Mutation {
+public interface IMutation {
     void mutate(int[] genes);
 }

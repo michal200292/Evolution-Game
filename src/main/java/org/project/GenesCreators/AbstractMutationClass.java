@@ -1,6 +1,6 @@
 package org.project.GenesCreators;
 
-abstract class AbstractMutationClass implements Mutation{
+abstract class AbstractMutationClass implements IMutation {
     int minNoOfMutations;
     int maxNoOfMutations;
 

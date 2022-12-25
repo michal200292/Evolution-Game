@@ -4,8 +4,8 @@ import org.project.Animal;
 import org.project.RNG;
 
 public class GenesCreator {
-    Mutation typeOfMutation;
-    public GenesCreator(Mutation typeOfMutation){
+    IMutation typeOfMutation;
+    public GenesCreator(IMutation typeOfMutation){
         this.typeOfMutation = typeOfMutation;
     }
 
