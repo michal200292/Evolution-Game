@@ -11,6 +11,10 @@ public class RNG {
         return MoveDirection.directions[randomNumber(0, 7)];
     }
 
+    public static Vector2d randomVector(int width, int height){
+        return new Vector2d(RNG.randomNumber(0, width - 1), RNG.randomNumber(0, height - 1));
+    }
+
     public static int[] generateGenes(int n){
         int[] genes = new int[n];
         for(int i = 0; i < n; i++){
