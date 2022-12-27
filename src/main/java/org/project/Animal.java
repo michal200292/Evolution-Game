@@ -14,6 +14,8 @@ public class Animal {
     public int activeGene;
     public int numberOfChildren;
 
+    public int age;
+
     public IMoveType nextMove;
 
     public WorldMap map;
@@ -30,6 +32,7 @@ public class Animal {
         this.nextMove = nextMove;
         this.map = map;
         this.map.addAnimal(position, this);
+        this.age = 0;
     }
 
     public Animal(Vector2d position, int energy, int numberOfGenes, int[] genes, IMoveType nextMove, WorldMap map){
@@ -42,6 +45,7 @@ public class Animal {
         this.nextMove = nextMove;
         this.map = map;
         this.map.addAnimal(position, this);
+        this.age = 0;
     }
 
     public void move(){
@@ -49,6 +53,7 @@ public class Animal {
         Vector2d nextPos = map.nextPosition(this);
         map.addAnimal(nextPos, this);
         map.removeAnimal(position, this);
+        age ++;
         this.position = nextPos;
         activeGene = nextMove.getNext(activeGene, numberOfGenes);
     }

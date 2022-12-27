@@ -25,6 +25,19 @@ public enum MoveDirection {
         };
     }
 
+    public MoveDirection opposite(MoveDirection direction){
+        return switch (direction){
+            case NN -> SS;
+            case NE -> SW;
+            case EE -> WW;
+            case SE -> NW;
+            case SS -> NN;
+            case SW -> NE;
+            case WW -> EE;
+            case NW -> SE;
+        };
+    }
+
     public Vector2d toVector(){
         return switch (this){
             case NN -> new Vector2d(0, 1);

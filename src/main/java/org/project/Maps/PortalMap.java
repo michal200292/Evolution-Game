@@ -16,6 +16,7 @@ public class PortalMap extends WorldMap{
             return pos;
         }
         else{
+            animal.orientation = animal.orientation.opposite(animal.orientation);
             animal.energy -= this.wastedEnergy;
             return RNG.randomVector(width, height);
         }

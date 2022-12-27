@@ -17,7 +17,7 @@ abstract public class WorldMap{
         this.width = width;
         this.height = height;
         this.wastedEnergy= wastedEnergy;
-        this.animals = new HashMap<>();
+        this.animals = Collections.synchronizedMap(new HashMap<>());
     }
     abstract public Vector2d nextPosition(Animal animal);
 
@@ -36,18 +36,18 @@ abstract public class WorldMap{
     }
 
 
-    public void totoString() {
-        for(int i = height - 1; i >= 0; i--){
-            for(int j = 0; j < width; j++){
-                Vector2d cur = new Vector2d(j, i);
-                if(animals.containsKey(cur)){
-                    System.out.print(animals.get(cur));
-                }
-                else{
-                    System.out.print("*");
-                }
-            }
-            System.out.println();
-        }
-    }
+//    public void totoString() {
+//        for(int i = height - 1; i >= 0; i--){
+//            for(int j = 0; j < width; j++){
+//                Vector2d cur = new Vector2d(j, i);
+//                if(animals.containsKey(cur)){
+//                    System.out.print(animals.get(cur));
+//                }
+//                else{
+//                    System.out.print("*");
+//                }
+//            }
+//            System.out.println();
+//        }
+//    }
 }
