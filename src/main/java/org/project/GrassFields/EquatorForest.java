@@ -1,6 +1,5 @@
 package org.project.GrassFields;
 
-import org.project.Grass;
 import org.project.RNG;
 import org.project.Vector2d;
 
@@ -61,6 +60,16 @@ public class EquatorForest extends AbstractGrassField{
                     findPlace(freePlacesOutsideEquator);
                 }
             }
+        }
+    }
+
+    public void removeGrass(int x, int y){
+        grass[x][y].energy = 0;
+        if(y < equatorBegin || y >= equatorEnd){
+            freePlacesOutsideEquator.add(grass[x][y].position);
+        }
+        else{
+            freePlacesOnEquator.add(grass[x][y].position);
         }
     }
 }

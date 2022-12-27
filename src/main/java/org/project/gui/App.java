@@ -15,6 +15,7 @@ import org.project.GenesCreators.FullRandom;
 import org.project.GenesCreators.IMutation;
 import org.project.GrassFields.AbstractGrassField;
 import org.project.GrassFields.EquatorForest;
+import org.project.GrassFields.ToxicBodies;
 import org.project.IObserver;
 import org.project.Maps.GlobeMap;
 import org.project.Maps.PortalMap;
@@ -38,22 +39,23 @@ public class App extends Application implements IObserver{
 
 
     public void init(){
-        int width = 50;
-        int height = 50;
-        int startingNumberOfPlants = 10;
-        int numberOfPlantsEveryDay = 5;
-        int plantEnergy = 5;
-        grassField = new EquatorForest(width, height, startingNumberOfPlants, numberOfPlantsEveryDay, plantEnergy);
-        int wastedEnergy = 5;
-        int numberOfAnimals = 10;
-        int startEnergy = 300;
+        int width = 60;
+        int height = 60;
+        int startingNumberOfPlants = 20;
+        int numberOfPlantsEveryDay = 20;
+        int plantEnergy = 10;
+        grassField = new ToxicBodies(width, height, startingNumberOfPlants, numberOfPlantsEveryDay, plantEnergy);
+        int wastedEnergy = 25;
+        int numberOfAnimals = 100;
+        int minimumEnergy = 35;
+        int startEnergy = 100;
         int numberOfGenes = 5;
         int minMutations = 0;
-        int maxMutations = 10;
+        int maxMutations = 5;
         int moveDelay = 100;
         IMutation typeOfMutation = new FullRandom(minMutations, maxMutations, numberOfGenes);
         IMoveType typeOfMove = new CrazyMovement();
-        this.map = new PortalMap(width, height, wastedEnergy, numberOfAnimals, startEnergy, numberOfGenes, typeOfMove);
+        this.map = new GlobeMap(width, height, wastedEnergy, numberOfAnimals, startEnergy, numberOfGenes, minimumEnergy, typeOfMove);
         this.engine = new SimulationEngine(map, typeOfMutation, moveDelay, grassField);
         engine.addObserver(this);
         Thread engineThread = new Thread(engine);
@@ -76,7 +78,6 @@ public class App extends Application implements IObserver{
             }
         }
         update();
-//        grid.setGridLinesVisible(true);
         Scene scene = new Scene(grid, 800, 800);
         primaryStage.setScene(scene);
         primaryStage.show();

@@ -1,4 +1,6 @@
-package org.project;
+package org.project.MapObjects;
+
+import org.project.Vector2d;
 
 public class Grass {
     public int energy;

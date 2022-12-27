@@ -1,11 +1,15 @@
-package org.project;
+package org.project.MapObjects;
 
+import org.project.GenesCreators.GenesCreator;
 import org.project.Maps.WorldMap;
+import org.project.MoveDirection;
 import org.project.MoveVariants.IMoveType;
+import org.project.RNG;
+import org.project.Vector2d;
 
 import java.util.Arrays;
 
-public class Animal {
+public class Animal{
     public int numberOfGenes;
     public MoveDirection orientation;
     public Vector2d position;
@@ -13,6 +17,8 @@ public class Animal {
     public int[] genes;
     public int activeGene;
     public int numberOfChildren;
+
+    public int minimumEnergy;
 
     public int age;
 
@@ -22,7 +28,7 @@ public class Animal {
 
     public Animal(){}
 
-    public Animal(Vector2d position, int energy, int numberOfGenes, IMoveType nextMove, WorldMap map){
+    public Animal(Vector2d position, int energy, int numberOfGenes, IMoveType nextMove, int minimumEnergy, WorldMap map){
         this.position = position;
         this.energy = energy;
         this.numberOfGenes = numberOfGenes;
@@ -33,9 +39,10 @@ public class Animal {
         this.map = map;
         this.map.addAnimal(position, this);
         this.age = 0;
+        this.minimumEnergy = minimumEnergy;
     }
 
-    public Animal(Vector2d position, int energy, int numberOfGenes, int[] genes, IMoveType nextMove, WorldMap map){
+    public Animal(Vector2d position, int energy, int numberOfGenes, int[] genes, IMoveType nextMove, int minimumEnergy, WorldMap map){
         this.position = position;
         this.energy = energy;
         this.numberOfGenes = numberOfGenes;
@@ -45,7 +52,9 @@ public class Animal {
         this.nextMove = nextMove;
         this.map = map;
         this.map.addAnimal(position, this);
+        this.map.animalList.add(this);
         this.age = 0;
+        this.minimumEnergy = minimumEnergy;
     }
 
     public void move(){
@@ -62,4 +71,14 @@ public class Animal {
     public String toString(){
         return "Zwierze na pozycji " + position + " o genach " + Arrays.toString(genes);
     }
+
+    public void reproduce(Animal other, GenesCreator genesCreator){
+        if(energy >= minimumEnergy && other.energy >= minimumEnergy) {
+            int[] newGenes = genesCreator.createNewGenes(this, other);
+            this.energy -= map.wastedEnergy;
+            other.energy -= map.wastedEnergy;
+            new Animal(this.position, 2*map.wastedEnergy, this.numberOfGenes, newGenes, this.nextMove, this.minimumEnergy, map);
+        }
+    }
+
 }

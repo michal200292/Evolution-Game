@@ -4,12 +4,15 @@ import javafx.application.Platform;
 import org.project.GenesCreators.GenesCreator;
 import org.project.GenesCreators.IMutation;
 import org.project.GrassFields.AbstractGrassField;
+import org.project.MapObjects.Animal;
 import org.project.Maps.WorldMap;
 
 import java.util.*;
 
 public class SimulationEngine implements Runnable{
     List<IObserver> observers;
+
+    public int stats;
     WorldMap map;
     AbstractGrassField grassField;
     GenesCreator genesCreator;
@@ -23,6 +26,7 @@ public class SimulationEngine implements Runnable{
         this.moveDelay = moveDelay;
         observers = new LinkedList<>();
         this.grassField = grassField;
+        stats = 0;
     }
 
     public void moveAnimals(){
@@ -44,6 +48,8 @@ public class SimulationEngine implements Runnable{
             for (Animal x : animalsToRemove){
                 map.animalList.remove(x);
                 map.animals.get(key).remove(x);
+                grassField.grass[x.position.x][x.position.y].deadAnimals++;
+                stats++;
             }
             if(map.animals.get(key).size() == 0){
                 arraysToRemove.add(key);
@@ -55,13 +61,37 @@ public class SimulationEngine implements Runnable{
     }
 
     public void grassConsumption(){
+        for (var entry : map.animals.entrySet()){
+            Vector2d key = entry.getKey();
+            map.sortAnimals(map.animals.get(key));
+            if(grassField.grass[key.x][key.y].energy > 0) {
+                map.animals.get(key).get(0).energy += grassField.plantEnergy;
+                grassField.removeGrass(key.x, key.y);
+            }
+        }
+    }
 
+    public void animalReproducing(){
+        for (var entry : map.animals.entrySet()){
+            Vector2d key = entry.getKey();
+            if(map.animals.get(key).size() >= 2){
+                Animal p1 = map.animals.get(key).get(0);
+                Animal p2 = map.animals.get(key).get(1);
+                p1.reproduce(p2, genesCreator);
+            }
+        }
     }
     public void run(){
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         for(int i = 0; i < 1000; i++){
             moveAnimals();
             removeDeadAnimals();
             grassConsumption();
+            animalReproducing();
             grassField.drawGrass(grassField.noOfPlantsDaily);
             Platform.runLater(this::informObservers);
             try {
@@ -69,6 +99,7 @@ public class SimulationEngine implements Runnable{
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
+            System.out.println(stats);
         }
     }
     public void informObservers(){

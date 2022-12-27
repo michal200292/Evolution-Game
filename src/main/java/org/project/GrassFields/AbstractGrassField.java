@@ -1,6 +1,6 @@
 package org.project.GrassFields;
 
-import org.project.Grass;
+import org.project.MapObjects.Grass;
 import org.project.Vector2d;
 
 abstract public class AbstractGrassField {
@@ -30,4 +30,6 @@ abstract public class AbstractGrassField {
     }
 
     abstract public void drawGrass(int n);
+
+    abstract public void removeGrass(int x, int y);
 }

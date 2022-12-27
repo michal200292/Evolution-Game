@@ -1,6 +1,6 @@
 package org.project.GenesCreators;
 
-import org.project.Animal;
+import org.project.MapObjects.Animal;
 import org.project.RNG;
 
 public class GenesCreator {
@@ -10,9 +10,7 @@ public class GenesCreator {
     }
 
     public void assignGenes(Animal parent, int [] genes, int left, int right){
-        for(int i = left; i <= right; i++){
-            genes[i] = parent.genes[i];
-        }
+        if (right + 1 - left >= 0) System.arraycopy(parent.genes, left, genes, left, right + 1 - left);
     }
     public int[] createNewGenes(Animal parent1, Animal parent2){
         int divisionPoint = parent1.energy* parent1.numberOfGenes / (parent1.energy + parent2.energy);
