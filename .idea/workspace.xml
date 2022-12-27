@@ -4,18 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e5f0b2b-cde3-496f-9a1d-16b05f1172ab" name="Changes" comment="tak">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/GrassFields/ToxicBodies.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/MapObjects/AnimalComparator.java" afterDir="false" />
+    <list default="true" id="2e5f0b2b-cde3-496f-9a1d-16b05f1172ab" name="Changes" comment="Simulation">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/gui/SimulationVisualizer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/MapObjects/Animal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/GenesCreators/GenesCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/GenesCreators/GenesCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/Grass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/MapObjects/Grass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/GrassFields/AbstractGrassField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/GrassFields/AbstractGrassField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/GrassFields/EquatorForest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/GrassFields/EquatorForest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/Maps/GlobeMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/Maps/GlobeMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/Maps/PortalMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/Maps/PortalMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/Maps/WorldMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/Maps/WorldMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/project/SimulationEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/SimulationEngine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/project/gui/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/gui/App.java" afterDir="false" />
     </list>
@@ -142,7 +134,7 @@
       <workItem from="1672052404325" duration="4305000" />
       <workItem from="1672092694947" duration="615000" />
       <workItem from="1672100185445" duration="9074000" />
-      <workItem from="1672152783210" duration="20517000" />
+      <workItem from="1672152783210" duration="26360000" />
     </task>
     <task id="LOCAL-00001" summary="ProjectStart">
       <created>1670243540086</created>
@@ -228,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672160939519</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Simulation">
+      <created>1672176819580</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1672176819580</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,6 +249,7 @@
     <MESSAGE value="GeneCreator" />
     <MESSAGE value="WorldMap" />
     <MESSAGE value="tak" />
-    <option name="LAST_COMMIT_MESSAGE" value="tak" />
+    <MESSAGE value="Simulation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Simulation" />
   </component>
 </project>

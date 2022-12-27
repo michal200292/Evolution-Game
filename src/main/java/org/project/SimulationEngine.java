@@ -6,6 +6,7 @@ import org.project.GenesCreators.IMutation;
 import org.project.GrassFields.AbstractGrassField;
 import org.project.MapObjects.Animal;
 import org.project.Maps.WorldMap;
+import org.project.gui.IObserver;
 
 import java.util.*;
 
@@ -83,11 +84,11 @@ public class SimulationEngine implements Runnable{
     }
     public void run(){
         try {
-            Thread.sleep(3000);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        for(int i = 0; i < 1000; i++){
+        for(int i = 0; i < 300; i++){
             moveAnimals();
             removeDeadAnimals();
             grassConsumption();
@@ -99,7 +100,6 @@ public class SimulationEngine implements Runnable{
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-            System.out.println(stats);
         }
     }
     public void informObservers(){
