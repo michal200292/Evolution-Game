@@ -49,11 +49,11 @@ public class Animal {
     }
 
     public void move(){
-        orientation = MoveDirection.directions[activeGene];
+        orientation = MoveDirection.directions[genes[activeGene]];
         Vector2d nextPos = map.nextPosition(this);
         map.addAnimal(nextPos, this);
         map.removeAnimal(position, this);
-        age ++;
+        age++;
         this.position = nextPos;
         activeGene = nextMove.getNext(activeGene, numberOfGenes);
     }

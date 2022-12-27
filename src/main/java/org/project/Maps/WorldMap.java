@@ -1,6 +1,8 @@
 package org.project.Maps;
 
 import org.project.Animal;
+import org.project.MoveVariants.IMoveType;
+import org.project.RNG;
 import org.project.Vector2d;
 
 import java.util.*;
@@ -12,12 +14,19 @@ abstract public class WorldMap{
 
     public Map<Vector2d, List<Animal>> animals;
 
+    public List<Animal> animalList;
 
-    public WorldMap(int width, int height, int wastedEnergy){
+
+    public WorldMap(int width, int height, int wastedEnergy, int startingNoAnimals, int startingEnergy, int numberOfGenes, IMoveType moveType){
         this.width = width;
         this.height = height;
         this.wastedEnergy= wastedEnergy;
         this.animals = Collections.synchronizedMap(new HashMap<>());
+        this.animalList = Collections.synchronizedList(new ArrayList<>());
+        for(int i = 0; i < startingNoAnimals; i++){
+            Animal newAnimal = new Animal(RNG.randomVector(width, height), startingEnergy, numberOfGenes, moveType, this);
+            animalList.add(newAnimal);
+        }
     }
     abstract public Vector2d nextPosition(Animal animal);
 
@@ -34,20 +43,4 @@ abstract public class WorldMap{
             animals.remove(pos);
         }
     }
-
-
-//    public void totoString() {
-//        for(int i = height - 1; i >= 0; i--){
-//            for(int j = 0; j < width; j++){
-//                Vector2d cur = new Vector2d(j, i);
-//                if(animals.containsKey(cur)){
-//                    System.out.print(animals.get(cur));
-//                }
-//                else{
-//                    System.out.print("*");
-//                }
-//            }
-//            System.out.println();
-//        }
-//    }
 }

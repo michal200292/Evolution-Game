@@ -1,17 +1,25 @@
 package org.project.gui;
 
 import javafx.application.Application;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import org.project.GenesCreators.FullRandom;
 import org.project.GenesCreators.IMutation;
+import org.project.GrassFields.AbstractGrassField;
+import org.project.GrassFields.EquatorForest;
 import org.project.IObserver;
 import org.project.Maps.GlobeMap;
 import org.project.Maps.PortalMap;
 import org.project.Maps.WorldMap;
+import org.project.MoveVariants.CrazyMovement;
 import org.project.MoveVariants.IMoveType;
 import org.project.MoveVariants.NormalMovement;
 import org.project.SimulationEngine;
@@ -21,6 +29,8 @@ public class App extends Application implements IObserver{
     public SimulationEngine engine;
     public WorldMap map;
 
+    public AbstractGrassField grassField;
+
     public GridPane grid;
     public Stage primaryStage;
 
@@ -28,19 +38,23 @@ public class App extends Application implements IObserver{
 
 
     public void init(){
-        int width = 10;
-        int height = 10;
+        int width = 50;
+        int height = 50;
+        int startingNumberOfPlants = 10;
+        int numberOfPlantsEveryDay = 5;
+        int plantEnergy = 5;
+        grassField = new EquatorForest(width, height, startingNumberOfPlants, numberOfPlantsEveryDay, plantEnergy);
         int wastedEnergy = 5;
-        int numberOfAnimals = 26;
-        int startEnergy = 15;
+        int numberOfAnimals = 10;
+        int startEnergy = 300;
         int numberOfGenes = 5;
         int minMutations = 0;
         int maxMutations = 10;
-        int moveDelay = 400;
+        int moveDelay = 100;
         IMutation typeOfMutation = new FullRandom(minMutations, maxMutations, numberOfGenes);
-        IMoveType typeOfMove = new NormalMovement();
-        this.map = new PortalMap(width, height, wastedEnergy);
-        this.engine = new SimulationEngine(map, numberOfAnimals, startEnergy, numberOfGenes, typeOfMove, typeOfMutation, moveDelay);
+        IMoveType typeOfMove = new CrazyMovement();
+        this.map = new PortalMap(width, height, wastedEnergy, numberOfAnimals, startEnergy, numberOfGenes, typeOfMove);
+        this.engine = new SimulationEngine(map, typeOfMutation, moveDelay, grassField);
         engine.addObserver(this);
         Thread engineThread = new Thread(engine);
         engineThread.start();
@@ -62,21 +76,25 @@ public class App extends Application implements IObserver{
             }
         }
         update();
-        grid.setGridLinesVisible(true);
+//        grid.setGridLinesVisible(true);
         Scene scene = new Scene(grid, 800, 800);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
 
+    public void setColor(int i, int j, Color color){
+        labels[i][j].setBackground(new Background(new BackgroundFill(color, CornerRadii.EMPTY, Insets.EMPTY)));
+    }
     public void update(){
         for(int i = 0; i < map.width; i++){
             for(int j = 0; j < map.height; j++){
+                setColor(i, j, Color.LIGHTGRAY);
+                if(grassField.grass[i][j].energy > 0){
+                    setColor(i, j, Color.GREEN);
+                }
                 Vector2d pos = new Vector2d(i, j);
                 if(map.animals.containsKey(pos)){
-                    labels[i][j].setText(String.valueOf(map.animals.get(pos).size()));
-                }
-                else{
-                    labels[i][j].setText("");
+                    setColor(i, j, Color.RED);
                 }
             }
         }

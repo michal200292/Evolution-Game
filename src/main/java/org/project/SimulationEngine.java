@@ -3,34 +3,30 @@ package org.project;
 import javafx.application.Platform;
 import org.project.GenesCreators.GenesCreator;
 import org.project.GenesCreators.IMutation;
+import org.project.GrassFields.AbstractGrassField;
 import org.project.Maps.WorldMap;
-import org.project.MoveVariants.IMoveType;
 
 import java.util.*;
 
 public class SimulationEngine implements Runnable{
     List<IObserver> observers;
-    List<Animal> animalList;
     WorldMap map;
+    AbstractGrassField grassField;
     GenesCreator genesCreator;
 
     List<Animal> animalsToRemove;
     List<Vector2d> arraysToRemove;
     public int moveDelay;
-    public SimulationEngine(WorldMap map, int startingNoAnimals, int startingEnergy, int numberOfGenes, IMoveType moveType, IMutation mutation, int moveDelay){
+    public SimulationEngine(WorldMap map, IMutation mutation, int moveDelay, AbstractGrassField grassField){
         this.map = map;
         this.genesCreator = new GenesCreator(mutation);
-        this.animalList = Collections.synchronizedList(new ArrayList<>());
         this.moveDelay = moveDelay;
         observers = new LinkedList<>();
-        for(int i = 0; i < startingNoAnimals; i++){
-            Animal newAnimal = new Animal(RNG.randomVector(map.width, map.height), startingEnergy, numberOfGenes, moveType, map);
-            animalList.add(newAnimal);
-        }
+        this.grassField = grassField;
     }
 
     public void moveAnimals(){
-        for(Animal x : animalList){
+        for(Animal x : map.animalList){
             x.move();
         }
     }
@@ -46,7 +42,7 @@ public class SimulationEngine implements Runnable{
                 }
             }
             for (Animal x : animalsToRemove){
-                animalList.remove(x);
+                map.animalList.remove(x);
                 map.animals.get(key).remove(x);
             }
             if(map.animals.get(key).size() == 0){
@@ -58,10 +54,15 @@ public class SimulationEngine implements Runnable{
         }
     }
 
+    public void grassConsumption(){
+
+    }
     public void run(){
-        for(int i = 0; i < 20; i++){
+        for(int i = 0; i < 1000; i++){
             moveAnimals();
             removeDeadAnimals();
+            grassConsumption();
+            grassField.drawGrass(grassField.noOfPlantsDaily);
             Platform.runLater(this::informObservers);
             try {
                 Thread.sleep(moveDelay);
