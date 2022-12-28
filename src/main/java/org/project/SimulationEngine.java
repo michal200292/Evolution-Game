@@ -5,7 +5,7 @@ import org.project.GenesCreators.GenesCreator;
 import org.project.GenesCreators.IMutation;
 import org.project.GrassFields.AbstractGrassField;
 import org.project.MapObjects.Animal;
-import org.project.Maps.WorldMap;
+import org.project.Maps.AbstractWorldMap;
 import org.project.gui.IObserver;
 
 import java.util.*;
@@ -14,14 +14,14 @@ public class SimulationEngine implements Runnable{
     List<IObserver> observers;
 
     public int stats;
-    WorldMap map;
+    AbstractWorldMap map;
     AbstractGrassField grassField;
     GenesCreator genesCreator;
 
     List<Animal> animalsToRemove;
     List<Vector2d> arraysToRemove;
     public int moveDelay;
-    public SimulationEngine(WorldMap map, IMutation mutation, int moveDelay, AbstractGrassField grassField){
+    public SimulationEngine(AbstractWorldMap map, IMutation mutation, int moveDelay, AbstractGrassField grassField){
         this.map = map;
         this.genesCreator = new GenesCreator(mutation);
         this.moveDelay = moveDelay;
@@ -84,11 +84,11 @@ public class SimulationEngine implements Runnable{
     }
     public void run(){
         try {
-            Thread.sleep(1000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        for(int i = 0; i < 300; i++){
+        for(int i = 0; i < 10000; i++){
             moveAnimals();
             removeDeadAnimals();
             grassConsumption();

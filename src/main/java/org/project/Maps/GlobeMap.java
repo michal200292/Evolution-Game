@@ -4,7 +4,7 @@ import org.project.MapObjects.Animal;
 import org.project.MoveVariants.IMoveType;
 import org.project.Vector2d;
 
-public class GlobeMap extends WorldMap{
+public class GlobeMap extends AbstractWorldMap {
     public GlobeMap(int width, int height, int wastedEnergy, int startingNoAnimals, int startingEnergy, int numberOfGenes, int minimumEnergy, IMoveType moveType) {
         super(width, height, wastedEnergy, startingNoAnimals, startingEnergy, numberOfGenes, minimumEnergy, moveType);
     }

@@ -1,7 +1,7 @@
 package org.project.MapObjects;
 
 import org.project.GenesCreators.GenesCreator;
-import org.project.Maps.WorldMap;
+import org.project.Maps.AbstractWorldMap;
 import org.project.MoveDirection;
 import org.project.MoveVariants.IMoveType;
 import org.project.RNG;
@@ -24,11 +24,11 @@ public class Animal{
 
     public IMoveType nextMove;
 
-    public WorldMap map;
+    public AbstractWorldMap map;
 
     public Animal(){}
 
-    public Animal(Vector2d position, int energy, int numberOfGenes, IMoveType nextMove, int minimumEnergy, WorldMap map){
+    public Animal(Vector2d position, int energy, int numberOfGenes, IMoveType nextMove, int minimumEnergy, AbstractWorldMap map){
         this.position = position;
         this.energy = energy;
         this.numberOfGenes = numberOfGenes;
@@ -42,7 +42,7 @@ public class Animal{
         this.minimumEnergy = minimumEnergy;
     }
 
-    public Animal(Vector2d position, int energy, int numberOfGenes, int[] genes, IMoveType nextMove, int minimumEnergy, WorldMap map){
+    public Animal(Vector2d position, int energy, int numberOfGenes, int[] genes, IMoveType nextMove, int minimumEnergy, AbstractWorldMap map){
         this.position = position;
         this.energy = energy;
         this.numberOfGenes = numberOfGenes;
@@ -75,6 +75,8 @@ public class Animal{
     public void reproduce(Animal other, GenesCreator genesCreator){
         if(energy >= minimumEnergy && other.energy >= minimumEnergy) {
             int[] newGenes = genesCreator.createNewGenes(this, other);
+            this.numberOfChildren++;
+            other.numberOfChildren++;
             this.energy -= map.wastedEnergy;
             other.energy -= map.wastedEnergy;
             new Animal(this.position, 2*map.wastedEnergy, this.numberOfGenes, newGenes, this.nextMove, this.minimumEnergy, map);

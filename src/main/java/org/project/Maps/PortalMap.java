@@ -5,7 +5,7 @@ import org.project.MoveVariants.IMoveType;
 import org.project.RNG;
 import org.project.Vector2d;
 
-public class PortalMap extends WorldMap{
+public class PortalMap extends AbstractWorldMap {
     public PortalMap(int width, int height, int wastedEnergy, int startingNoAnimals, int startingEnergy, int numberOfGenes, int minimumEnergy, IMoveType moveType) {
         super(width, height, wastedEnergy, startingNoAnimals, startingEnergy, numberOfGenes, minimumEnergy, moveType);
     }

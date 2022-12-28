@@ -12,14 +12,14 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import org.project.GenesCreators.IMutation;
 import org.project.GrassFields.AbstractGrassField;
-import org.project.Maps.WorldMap;
+import org.project.Maps.AbstractWorldMap;
 import org.project.SimulationEngine;
 import org.project.Vector2d;
 
 public class SimulationVisualizer implements IObserver {
 
     public SimulationEngine engine;
-    public WorldMap map;
+    public AbstractWorldMap map;
 
     public AbstractGrassField grassField;
 
@@ -30,7 +30,7 @@ public class SimulationVisualizer implements IObserver {
 
     Stage primaryStage;
 
-    public SimulationVisualizer(AbstractGrassField grassField, WorldMap map, IMutation typeOfMutation, int delay){
+    public SimulationVisualizer(AbstractGrassField grassField, AbstractWorldMap map, IMutation typeOfMutation, int delay){
         this.grassField = grassField;
         this.map = map;
         this.engine = new SimulationEngine(map, typeOfMutation, delay, grassField);
@@ -38,8 +38,10 @@ public class SimulationVisualizer implements IObserver {
         Thread engineThread = new Thread(engine);
         engineThread.start();
         grid = new GridPane();
-        int boxWidth = 800 / map.width;
-        int boxHeight = 800 / map.height;
+        float w = map.width;
+        float h = map.height;
+        float boxWidth = 800 / w;
+        float boxHeight = 800 / h;
         labels = new Label[map.width][map.height];
         for(int i = 0; i < map.width; i++){
             for(int j = 0; j < map.height; j++){
@@ -51,7 +53,7 @@ public class SimulationVisualizer implements IObserver {
             }
         }
         update();
-        scene = new Scene(grid, 1600, 800);
+        scene = new Scene(grid, 800, 800);
         primaryStage = new Stage();
         primaryStage.setScene(scene);
         primaryStage.show();

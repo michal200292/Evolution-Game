@@ -8,7 +8,7 @@ import org.project.Vector2d;
 
 import java.util.*;
 
-abstract public class WorldMap{
+abstract public class AbstractWorldMap {
     public int width;
     public int height;
     public int wastedEnergy;
@@ -20,7 +20,7 @@ abstract public class WorldMap{
     public List<Animal> animalList;
 
 
-    public WorldMap(int width, int height, int wastedEnergy, int startingNoAnimals, int startingEnergy, int numberOfGenes, int minimumEnergy, IMoveType moveType){
+    public AbstractWorldMap(int width, int height, int wastedEnergy, int startingNoAnimals, int startingEnergy, int numberOfGenes, int minimumEnergy, IMoveType moveType){
         this.width = width;
         this.height = height;
         this.wastedEnergy= wastedEnergy;
