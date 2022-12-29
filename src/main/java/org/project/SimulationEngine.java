@@ -13,6 +13,8 @@ import java.util.*;
 public class SimulationEngine implements Runnable{
     List<IObserver> observers;
 
+    public boolean checkIfStop;
+    public boolean isPaused;
     public int stats;
     AbstractWorldMap map;
     AbstractGrassField grassField;
@@ -22,6 +24,8 @@ public class SimulationEngine implements Runnable{
     List<Vector2d> arraysToRemove;
     public int moveDelay;
     public SimulationEngine(AbstractWorldMap map, IMutation mutation, int moveDelay, AbstractGrassField grassField){
+        this.checkIfStop = false;
+        this.isPaused = false;
         this.map = map;
         this.genesCreator = new GenesCreator(mutation);
         this.moveDelay = moveDelay;
@@ -84,16 +88,18 @@ public class SimulationEngine implements Runnable{
     }
     public void run(){
         try {
-            Thread.sleep(3000);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        for(int i = 0; i < 10000; i++){
-            moveAnimals();
-            removeDeadAnimals();
-            grassConsumption();
-            animalReproducing();
-            grassField.drawGrass(grassField.noOfPlantsDaily);
+        while(!checkIfStop){
+            if(!isPaused) {
+                moveAnimals();
+                removeDeadAnimals();
+                grassConsumption();
+                animalReproducing();
+                grassField.drawGrass(grassField.noOfPlantsDaily);
+            }
             Platform.runLater(this::informObservers);
             try {
                 Thread.sleep(moveDelay);

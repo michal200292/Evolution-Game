@@ -5,12 +5,10 @@ import javafx.collections.FXCollections;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.Slider;
+import javafx.scene.control.*;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import org.project.GenesCreators.FullRandom;
@@ -25,6 +23,8 @@ import org.project.Maps.PortalMap;
 import org.project.MoveVariants.CrazyMovement;
 import org.project.MoveVariants.IMoveType;
 import org.project.MoveVariants.NormalMovement;
+
+import java.io.FileNotFoundException;
 
 public class App extends Application{
 
@@ -62,6 +62,20 @@ public class App extends Application{
         return choiceBox;
     }
 
+    public void createPopUpWindow(String message){
+        Stage popUp = new Stage();
+        StackPane pane = new StackPane();
+        Label errorMessage = new Label(message);
+        pane.getChildren().add(errorMessage);
+        popUp.setScene(new Scene(pane, 300, 140));
+        popUp.setMinHeight(140);
+        popUp.setMaxHeight(140);
+        popUp.setMinWidth(300);
+        popUp.setMaxWidth(300);
+        popUp.setTitle("Wrong parameters");
+        popUp.show();
+    }
+
     public void start(Stage pStage){
         layout = new GridPane();
         for(int i = 0; i < 2; i++)  layout.getColumnConstraints().add(new ColumnConstraints(120));
@@ -76,23 +90,23 @@ public class App extends Application{
         layout.add(upper, 0, 0, 5, 1);
         pos = 1;
         addLabel("Width of a World");
-        Slider widthConf = createSlider(10, 60, 35);
+        Slider widthConf = createSlider(10, 80, 45);
         addLabel("Height of a World");
-        Slider heightConf = createSlider(10, 60, 35);
+        Slider heightConf = createSlider(10, 80, 45);
         addLabel("Starting number of Plants");
-        Slider startPlants = createSlider(0, 50, 25);
+        Slider startPlants = createSlider(0, 100, 50);
         addLabel("Plants drawn every day");
-        Slider plantsDaily = createSlider(0, 20, 10);
+        Slider plantsDaily = createSlider(0, 100, 50);
         addLabel("Energy gained from eating plant");
-        Slider plantEnergy = createSlider(0, 20, 10);
+        Slider plantEnergy = createSlider(0, 50, 25);
         addLabel("Starting number of animals");
-        Slider numberOfAnimals = createSlider(5, 100, 52);
+        Slider numberOfAnimals = createSlider(5, 300, 155);
         addLabel("Starting energy for animals");
-        Slider animalsStartEnergy = createSlider(5, 100, 52);
+        Slider animalsStartEnergy = createSlider(5, 200, 102);
         addLabel("Minimum energy to reproduce");
-        Slider minimumReproducingEnergy = createSlider(3, 40, 21);
+        Slider minimumReproducingEnergy = createSlider(3, 80, 41);
         addLabel("Energy wasted on reproducing");
-        Slider reproducingEnergy = createSlider(2, 30, 16);
+        Slider reproducingEnergy = createSlider(2, 60, 31);
         addLabel("Length of animal's genome");
         Slider numberOfGenes = createSlider(4, 40, 22);
         addLabel("Min number of changes during mutation");
@@ -137,6 +151,7 @@ public class App extends Application{
         primaryStage.setMaxWidth(600);
         primaryStage.setMinHeight(800);
         primaryStage.setMaxHeight(800);
+        primaryStage.setTitle("Configuration Window");
         primaryStage.show();
 
         start.setOnAction(x -> {
@@ -157,9 +172,6 @@ public class App extends Application{
             AbstractWorldMap map;
             IMutation typeOfMutation;
             IMoveType typeOfMove;
-            if(delay < 150) {
-                return;
-            }
             if(grassFieldChoice.getValue().equals("Equator Forest")){
                 grassField = new EquatorForest(width, height, startingNumberOfPlants, numberOfPlantsEveryDay, eatingEnergy);
             }
