@@ -67,14 +67,15 @@ public class SimulationVisualizer implements IObserver {
         pauseButton.setOnAction(event ->{
             pauseOrResumeSimulation();
         });
+
         scene = new Scene(grid, 850, 800);
         primaryStage = new Stage();
         primaryStage.setScene(scene);
         primaryStage.setTitle("Evolution Game");
-        primaryStage.show();
         primaryStage.setOnCloseRequest(event ->{
-            engine.checkIfStop = true;
+            engineThread.interrupt();
         });
+        primaryStage.show();
     }
 
     public void setColor(int i, int j, Color color){

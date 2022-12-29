@@ -12,8 +12,6 @@ import java.util.*;
 
 public class SimulationEngine implements Runnable{
     List<IObserver> observers;
-
-    public boolean checkIfStop;
     public boolean isPaused;
     public int stats;
     AbstractWorldMap map;
@@ -24,7 +22,6 @@ public class SimulationEngine implements Runnable{
     List<Vector2d> arraysToRemove;
     public int moveDelay;
     public SimulationEngine(AbstractWorldMap map, IMutation mutation, int moveDelay, AbstractGrassField grassField){
-        this.checkIfStop = false;
         this.isPaused = false;
         this.map = map;
         this.genesCreator = new GenesCreator(mutation);
@@ -92,7 +89,7 @@ public class SimulationEngine implements Runnable{
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        while(!checkIfStop){
+        for(;;){
             if(!isPaused) {
                 moveAnimals();
                 removeDeadAnimals();
@@ -104,7 +101,8 @@ public class SimulationEngine implements Runnable{
             try {
                 Thread.sleep(moveDelay);
             } catch (InterruptedException e) {
-                throw new RuntimeException(e);
+                Thread.currentThread().interrupt();
+                break;
             }
         }
     }
