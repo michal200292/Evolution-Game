@@ -1,5 +1,6 @@
 package org.project.gui;
 
+import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -18,7 +19,7 @@ import org.project.SimulationEngine;
 import org.project.Vector2d;
 
 
-public class SimulationVisualizer implements IObserver {
+public class SimulationVisualizer extends Application implements IObserver {
 
     public SimulationEngine engine;
     public AbstractWorldMap map;
@@ -40,6 +41,9 @@ public class SimulationVisualizer implements IObserver {
         this.grassField = grassField;
         this.map = map;
         this.engine = new SimulationEngine(map, typeOfMutation, delay, grassField);
+    }
+
+    public void start(Stage pStage){
         engine.addObserver(this);
         Thread engineThread = new Thread(engine);
         engineThread.start();
@@ -69,7 +73,7 @@ public class SimulationVisualizer implements IObserver {
         });
 
         scene = new Scene(grid, 850, 800);
-        primaryStage = new Stage();
+        primaryStage = pStage;
         primaryStage.setScene(scene);
         primaryStage.setTitle("Evolution Game");
         primaryStage.setOnCloseRequest(event ->{

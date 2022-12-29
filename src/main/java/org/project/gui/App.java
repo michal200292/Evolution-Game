@@ -277,8 +277,8 @@ public class App extends Application{
             else{
                 map = new PortalMap(width, height, wastedEnergy, noOfAnimals, startEnergy, noOfGenes, minimumEnergy, typeOfMove);
             }
-            SimulationVisualizer S1 = new SimulationVisualizer(grassField, map, typeOfMutation, delay);
-
+            SimulationVisualizer simulationVisualizer = new SimulationVisualizer(grassField, map, typeOfMutation, delay);
+            simulationVisualizer.start(new Stage());
         });
     }
     public void loadConfig(String fileName) throws FileNotFoundException {

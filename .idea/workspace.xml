@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e5f0b2b-cde3-496f-9a1d-16b05f1172ab" name="Changes" comment="PauseButton">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/gui/LineChart.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/SimulationEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/SimulationEngine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/project/gui/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/gui/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/project/gui/SimulationVisualizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/gui/SimulationVisualizer.java" afterDir="false" />
     </list>
@@ -137,7 +137,7 @@
       <workItem from="1672152783210" duration="26360000" />
       <workItem from="1672184756901" duration="4824000" />
       <workItem from="1672239937691" duration="30646000" />
-      <workItem from="1672311630049" duration="4542000" />
+      <workItem from="1672311630049" duration="6106000" />
     </task>
     <task id="LOCAL-00001" summary="ProjectStart">
       <created>1670243540086</created>
@@ -251,7 +251,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672276757980</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="PauseButton">
+      <created>1672316401239</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1672316401239</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
