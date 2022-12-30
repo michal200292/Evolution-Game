@@ -28,7 +28,6 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Arrays;
 
 public class App extends Application{
 
@@ -101,7 +100,7 @@ public class App extends Application{
         popUp.setTitle("Wrong parameters");
         popUp.show();
     }
-
+    @Override
     public void start(Stage pStage){
         layout = new GridPane();
         for(int i = 0; i < 2; i++)  layout.getColumnConstraints().add(new ColumnConstraints(120));
@@ -181,8 +180,13 @@ public class App extends Application{
             }
         });
 
+        CheckBox saveToCsv = new CheckBox("Save stats to CSV file");
+        saveToCsv.setPadding(new Insets(10, 0, 0, 0));
+        layout.add(saveToCsv, 0, pos, 2, 1);
+        pos++;
+
         Label title4 = new Label();
-        title4.setMinHeight(50);
+        title4.setMinHeight(20);
         GridPane.setHalignment(title4, HPos.CENTER);
         layout.add(title4, 0, pos, 5, 1);
         pos++;
@@ -192,7 +196,6 @@ public class App extends Application{
         start.minWidth(60);
         start.minHeight(80);
         layout.add(start, 0, pos, 5, 1);
-
 
         Scene scene = new Scene(layout, 600, 900);
         primaryStage = new Stage();
@@ -277,8 +280,10 @@ public class App extends Application{
             else{
                 map = new PortalMap(width, height, wastedEnergy, noOfAnimals, startEnergy, noOfGenes, minimumEnergy, typeOfMove);
             }
-            SimulationVisualizer simulationVisualizer = new SimulationVisualizer(grassField, map, typeOfMutation, delay);
+            boolean saveStats = saveToCsv.isSelected();
+            SimulationVisualizer simulationVisualizer = new SimulationVisualizer(grassField, map, typeOfMutation, delay, saveStats);
             simulationVisualizer.start(new Stage());
+
         });
     }
     public void loadConfig(String fileName) throws FileNotFoundException {

@@ -13,7 +13,10 @@ import java.util.*;
 public class SimulationEngine implements Runnable{
     List<IObserver> observers;
     public boolean isPaused;
-    public int stats;
+
+    public int noOfDeadAnimals;
+    public int sumOfLifeLengthOfDeadAnimals;
+
     AbstractWorldMap map;
     AbstractGrassField grassField;
     GenesCreator genesCreator;
@@ -28,7 +31,8 @@ public class SimulationEngine implements Runnable{
         this.moveDelay = moveDelay;
         observers = new LinkedList<>();
         this.grassField = grassField;
-        stats = 0;
+        this.noOfDeadAnimals = 0;
+        this.sumOfLifeLengthOfDeadAnimals = 0;
     }
 
     public void moveAnimals(){
@@ -45,13 +49,14 @@ public class SimulationEngine implements Runnable{
             for (Animal x : map.animals.get(key)) {
                 if (x.energy <= 0) {
                     animalsToRemove.add(x);
+                    noOfDeadAnimals++;
+                    sumOfLifeLengthOfDeadAnimals+=x.age;
                 }
             }
             for (Animal x : animalsToRemove){
                 map.animalList.remove(x);
                 map.animals.get(key).remove(x);
                 grassField.grass[x.position.x][x.position.y].deadAnimals++;
-                stats++;
             }
             if(map.animals.get(key).size() == 0){
                 arraysToRemove.add(key);
