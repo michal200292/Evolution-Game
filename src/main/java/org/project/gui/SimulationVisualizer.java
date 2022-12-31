@@ -29,25 +29,33 @@ public class SimulationVisualizer extends Application implements IObserver {
     public LinePlot plot3;
     public SimulationEngine engine;
     public AbstractWorldMap map;
-
     public int dayNumber;
 
     boolean saveStats;
     Button pauseButton;
     public boolean isPaused;
 
+    public boolean isTracked;
+
+    public Animal trackedAnimal;
+
+    public TrackerBox tracker;
+
     public AbstractGrassField grassField;
 
     public GridPane grid;
 
     Scene scene;
-    Label[][] labels;
+
+    GuiElementBox[][] board;
 
     Stage primaryStage;
 
     List<int[]> stats;
 
     public SimulationVisualizer(AbstractGrassField grassField, AbstractWorldMap map, IMutation typeOfMutation, int delay, boolean saveStats){
+        tracker = new TrackerBox(this);
+        this.isTracked = false;
         this.isPaused = false;
         this.grassField = grassField;
         this.map = map;
@@ -73,14 +81,11 @@ public class SimulationVisualizer extends Application implements IObserver {
         else{
             boxWidth *= w / h;
         }
-        labels = new Label[map.width][map.height];
+        board = new GuiElementBox[map.width][map.height];
         for(int i = 0; i < map.width; i++){
             for(int j = 0; j < map.height; j++){
-                labels[i][j] = new Label();
-                labels[i][j].setMinHeight(boxHeight);
-                labels[i][j].setMinWidth(boxWidth);
-                labels[i][j].setAlignment(Pos.CENTER);
-                grid.add(labels[i][j], i, j, 1, 1);
+                board[i][j] = new GuiElementBox(i, j, boxWidth, boxHeight, this, tracker);
+                grid.add(board[i][j].button, i, j, 1, 1);
             }
         }
 
@@ -118,12 +123,13 @@ public class SimulationVisualizer extends Application implements IObserver {
 
         VBox legendBox = new VBox();
         legendBox.getChildren().addAll(legend, d1, d2, d3, d4);
-        legendBox.setMaxWidth(250);
-        legendBox.setAlignment(Pos.CENTER);
+
+        HBox container = new HBox();
+        container.getChildren().addAll(legendBox, tracker.trackingBox);
 
         VBox charts = new VBox();
         charts.setAlignment(Pos.CENTER);
-        charts.getChildren().addAll(plot1.lineChart, plot2.lineChart, plot3.lineChart, legendBox);
+        charts.getChildren().addAll(plot1.lineChart, plot2.lineChart, plot3.lineChart, container);
         HBox visualisation = new HBox();
         visualisation.getChildren().addAll(grid, pauseButton, charts);
 
@@ -145,20 +151,6 @@ public class SimulationVisualizer extends Application implements IObserver {
         primaryStage.show();
     }
 
-    public void setColor(int i, int j, Color color){
-        labels[i][j].setBackground(new Background(new BackgroundFill(color, CornerRadii.EMPTY, Insets.EMPTY)));
-    }
-
-    public void pauseOrResumeSimulation(){
-        if(isPaused){
-            pauseButton.setText("\u23F8");
-        }
-        else{
-            pauseButton.setText("\u25B6");
-        }
-        isPaused = !isPaused;
-        engine.isPaused = !engine.isPaused;
-    }
     public void update() {
         if(!isPaused) {
             int noOfAnimals = map.animalList.size();
@@ -187,6 +179,10 @@ public class SimulationVisualizer extends Application implements IObserver {
                     }
                 }
             }
+            if(isTracked){
+                setColor(trackedAnimal.position.x, trackedAnimal.position.y, Color.BLUE);
+                tracker.updateBox(trackedAnimal);
+            }
             dayNumber++;
             int averageEnergyLevel;
             if(noOfAnimals == 0) averageEnergyLevel = 0;
@@ -214,5 +210,20 @@ public class SimulationVisualizer extends Application implements IObserver {
         desc.setFont(new Font(12));
         hbox.getChildren().addAll(coloredLabel, desc);
         return hbox;
+    }
+
+    public void setColor(int i, int j, Color color){
+        board[i][j].button.setBackground(new Background(new BackgroundFill(color, CornerRadii.EMPTY, Insets.EMPTY)));
+    }
+
+    public void pauseOrResumeSimulation(){
+        if(isPaused){
+            pauseButton.setText("\u23F8");
+        }
+        else{
+            pauseButton.setText("\u25B6");
+        }
+        isPaused = !isPaused;
+        engine.isPaused = !engine.isPaused;
     }
 }

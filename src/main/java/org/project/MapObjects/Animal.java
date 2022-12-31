@@ -14,6 +14,7 @@ public class Animal{
     public MoveDirection orientation;
     public Vector2d position;
     public int energy;
+    public int plantsEaten;
     public int[] genes;
     public int activeGene;
     public int numberOfChildren;
@@ -21,6 +22,8 @@ public class Animal{
     public int minimumEnergy;
 
     public int age;
+
+    public int dayOfDeath;
 
     public IMoveType nextMove;
 
@@ -81,6 +84,11 @@ public class Animal{
             other.energy -= map.wastedEnergy;
             new Animal(this.position, 2*map.wastedEnergy, this.numberOfGenes, newGenes, this.nextMove, this.minimumEnergy, map);
         }
+    }
+
+    public void consume(int grassEnergy){
+        this.energy += grassEnergy;
+        this.plantsEaten ++;
     }
 
 }

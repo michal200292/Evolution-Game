@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e5f0b2b-cde3-496f-9a1d-16b05f1172ab" name="Changes" comment="PauseButton">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/gui/FileWriter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/gui/LinePlot.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/savedSimulationStatistics/numberOfFiles.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_12_2022_22_03_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_12_2022_22_03__Changes_.xml" beforeDir="false" />
+    <list default="true" id="2e5f0b2b-cde3-496f-9a1d-16b05f1172ab" name="Changes" comment="Writing to file">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/gui/GuiElementBox.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/gui/TrackerBox.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/MapObjects/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/MapObjects/Animal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/project/SimulationEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/SimulationEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/gui/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/gui/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/gui/LineChart.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/project/gui/SimulationVisualizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/gui/SimulationVisualizer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,19 +51,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "inlay.hints"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.project.gui" />
@@ -163,6 +159,8 @@
       <workItem from="1672311630049" duration="26813000" />
       <workItem from="1672347018347" duration="970000" />
       <workItem from="1672398521842" duration="5277000" />
+      <workItem from="1672438758444" duration="336000" />
+      <workItem from="1672444656558" duration="9532000" />
     </task>
     <task id="LOCAL-00001" summary="ProjectStart">
       <created>1670243540086</created>
@@ -297,7 +295,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672319283898</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Writing to file">
+      <created>1672439036176</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1672439036176</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -323,6 +328,7 @@
     <MESSAGE value="Simulation" />
     <MESSAGE value="ConfigWindow" />
     <MESSAGE value="PauseButton" />
-    <option name="LAST_COMMIT_MESSAGE" value="PauseButton" />
+    <MESSAGE value="Writing to file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Writing to file" />
   </component>
 </project>

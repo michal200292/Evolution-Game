@@ -14,6 +14,7 @@ public class SimulationEngine implements Runnable{
     List<IObserver> observers;
     public boolean isPaused;
 
+    public int dayNumber;
     public int noOfDeadAnimals;
     public int sumOfLifeLengthOfDeadAnimals;
 
@@ -25,6 +26,7 @@ public class SimulationEngine implements Runnable{
     List<Vector2d> arraysToRemove;
     public int moveDelay;
     public SimulationEngine(AbstractWorldMap map, IMutation mutation, int moveDelay, AbstractGrassField grassField){
+        this.dayNumber = 0;
         this.isPaused = false;
         this.map = map;
         this.genesCreator = new GenesCreator(mutation);
@@ -54,6 +56,7 @@ public class SimulationEngine implements Runnable{
                 }
             }
             for (Animal x : animalsToRemove){
+                x.dayOfDeath = dayNumber;
                 map.animalList.remove(x);
                 map.animals.get(key).remove(x);
                 grassField.grass[x.position.x][x.position.y].deadAnimals++;
@@ -72,7 +75,7 @@ public class SimulationEngine implements Runnable{
             Vector2d key = entry.getKey();
             map.sortAnimals(map.animals.get(key));
             if(grassField.grass[key.x][key.y].energy > 0) {
-                map.animals.get(key).get(0).energy += grassField.plantEnergy;
+                map.animals.get(key).get(0).consume(grassField.plantEnergy);
                 grassField.removeGrass(key.x, key.y);
             }
         }
@@ -101,6 +104,7 @@ public class SimulationEngine implements Runnable{
                 grassConsumption();
                 animalReproducing();
                 grassField.drawGrass(grassField.noOfPlantsDaily);
+                dayNumber++;
             }
             Platform.runLater(this::informObservers);
             try {
