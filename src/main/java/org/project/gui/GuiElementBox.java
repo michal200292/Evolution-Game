@@ -22,9 +22,8 @@ public class GuiElementBox{
         button.setMinWidth(width);
         button.setOnAction(event -> {
             if(visualizer.isPaused && !visualizer.isTracked){
-                Vector2d pos = new Vector2d(x_cord, y_cord);
-                if(visualizer.map.animals.containsKey(pos)){
-                    visualizer.trackedAnimal = visualizer.map.animals.get(pos).get(0);
+                if(visualizer.map.animals.get(x_cord).get(y_cord).size() > 0){
+                    visualizer.trackedAnimal = visualizer.map.animals.get(x_cord).get(y_cord).get(0);
                     visualizer.isTracked = true;
                     visualizer.setColor(visualizer.trackedAnimal.position.x, visualizer.trackedAnimal.position.y, Color.BLUE);
                     tracker.updateBox(visualizer.trackedAnimal);

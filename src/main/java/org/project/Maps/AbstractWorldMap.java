@@ -15,7 +15,7 @@ abstract public class AbstractWorldMap {
 
     public int minimumEnergy;
 
-    public Map<Vector2d, List<Animal>> animals;
+    public List<List<List<Animal>>> animals;
 
     public List<Animal> animalList;
 
@@ -24,8 +24,14 @@ abstract public class AbstractWorldMap {
         this.width = width;
         this.height = height;
         this.wastedEnergy= wastedEnergy;
-        this.animals = new HashMap<>();
-        this.animalList = new ArrayList<>();
+        this.animals = new ArrayList<>(width);
+        for(int i = 0; i < width; i++){
+            this.animals.add(new ArrayList<>(height));
+            for(int j = 0; j < height; j++){
+                this.animals.get(i).add(new LinkedList<>());
+            }
+        }
+        this.animalList = new LinkedList<>();
         this.minimumEnergy = minimumEnergy;
         for(int i = 0; i < startingNoAnimals; i++){
             Animal newAnimal = new Animal(RNG.randomVector(width, height), startingEnergy, numberOfGenes, moveType, minimumEnergy, this);
@@ -35,17 +41,11 @@ abstract public class AbstractWorldMap {
     abstract public Vector2d nextPosition(Animal animal);
 
     public void addAnimal(Vector2d pos, Animal animal){
-        if(!animals.containsKey(pos)){
-            animals.put(pos, new ArrayList<>());
-        }
-        animals.get(pos).add(animal);
+        animals.get(pos.x).get(pos.y).add(animal);
     }
 
     public void removeAnimal(Vector2d pos, Animal animal){
-        animals.get(pos).remove(animal);
-        if(animals.get(pos).size() == 0){
-            animals.remove(pos);
-        }
+        animals.get(pos.x).get(pos.y).remove(animal);
     }
 
     public void sortAnimals(List<Animal> listOfAnimals) {

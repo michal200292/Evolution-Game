@@ -160,9 +160,8 @@ public class SimulationVisualizer extends Application implements IObserver {
             int freePlaces = 0;
             for (int i = 0; i < map.width; i++) {
                 for (int j = 0; j < map.height; j++) {
-                    Vector2d pos = new Vector2d(i, j);
-                    if (map.animals.containsKey(pos)) {
-                        if(map.animals.get(pos).get(0).energy >= map.minimumEnergy) {
+                    if (map.animals.get(i).get(j).size() > 0) {
+                        if(map.animals.get(i).get(j).get(0).energy >= map.minimumEnergy) {
                             setColor(i, j, Color.RED);
                         }
                         else{
@@ -211,7 +210,6 @@ public class SimulationVisualizer extends Application implements IObserver {
         hbox.getChildren().addAll(coloredLabel, desc);
         return hbox;
     }
-
     public void setColor(int i, int j, Color color){
         board[i][j].button.setBackground(new Background(new BackgroundFill(color, CornerRadii.EMPTY, Insets.EMPTY)));
     }

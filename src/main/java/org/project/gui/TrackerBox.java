@@ -4,6 +4,7 @@ import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import org.project.MapObjects.Animal;
 
@@ -43,6 +44,7 @@ public class TrackerBox {
         stopTracking.setOnAction(event -> {
             trackingBox.setVisible(false);
             visualizer.isTracked = false;
+            visualizer.setColor(visualizer.trackedAnimal.position.x, visualizer.trackedAnimal.position.y, Color.SALMON);
         });
     }
 

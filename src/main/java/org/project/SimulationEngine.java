@@ -21,9 +21,6 @@ public class SimulationEngine implements Runnable{
     AbstractWorldMap map;
     AbstractGrassField grassField;
     GenesCreator genesCreator;
-
-    List<Animal> animalsToRemove;
-    List<Vector2d> arraysToRemove;
     public int moveDelay;
     public SimulationEngine(AbstractWorldMap map, IMutation mutation, int moveDelay, AbstractGrassField grassField){
         this.dayNumber = 0;
@@ -44,50 +41,51 @@ public class SimulationEngine implements Runnable{
     }
 
     public void removeDeadAnimals() {
-        arraysToRemove = new LinkedList<>();
-        for (var entry : map.animals.entrySet()) {
-            Vector2d key = entry.getKey();
-            animalsToRemove = new LinkedList<>();
-            for (Animal x : map.animals.get(key)) {
-                if (x.energy <= 0) {
-                    animalsToRemove.add(x);
-                    noOfDeadAnimals++;
-                    sumOfLifeLengthOfDeadAnimals+=x.age;
+        List<Animal> allStillAlive = new LinkedList<>();
+        for(int i = 0; i < map.width; i++){
+            for(int j = 0; j < map.height; j++){
+                List<Animal> stillAlive = new LinkedList<>();
+                for(Animal x: map.animals.get(i).get(j)){
+                    if(x.energy > 0){
+                        stillAlive.add(x);
+                        allStillAlive.add(x);
+                    }
+                    else{
+                        x.dayOfDeath = dayNumber;
+                        noOfDeadAnimals++;
+                        sumOfLifeLengthOfDeadAnimals+=x.age;
+                    }
                 }
-            }
-            for (Animal x : animalsToRemove){
-                x.dayOfDeath = dayNumber;
-                map.animalList.remove(x);
-                map.animals.get(key).remove(x);
-                grassField.grass[x.position.x][x.position.y].deadAnimals++;
-            }
-            if(map.animals.get(key).size() == 0){
-                arraysToRemove.add(key);
+                map.animals.get(i).set(j, stillAlive);
             }
         }
-        for(Vector2d key : arraysToRemove){
-            map.animals.remove(key);
-        }
+        map.animalList = allStillAlive;
+
     }
 
     public void grassConsumption(){
-        for (var entry : map.animals.entrySet()){
-            Vector2d key = entry.getKey();
-            map.sortAnimals(map.animals.get(key));
-            if(grassField.grass[key.x][key.y].energy > 0) {
-                map.animals.get(key).get(0).consume(grassField.plantEnergy);
-                grassField.removeGrass(key.x, key.y);
+        for(int i = 0; i < map.width; i++){
+            for(int j = 0; j < map.height; j++){
+                if(map.animals.get(i).get(j).size() == 0){
+                    continue;
+                }
+                map.sortAnimals(map.animals.get(i).get(j));
+                if(grassField.grass[i][j].energy > 0 ){
+                    map.animals.get(i).get(j).get(0).consume(grassField.plantEnergy);
+                    grassField.removeGrass(i, j);
+                }
             }
         }
     }
 
     public void animalReproducing(){
-        for (var entry : map.animals.entrySet()){
-            Vector2d key = entry.getKey();
-            if(map.animals.get(key).size() >= 2){
-                Animal p1 = map.animals.get(key).get(0);
-                Animal p2 = map.animals.get(key).get(1);
-                p1.reproduce(p2, genesCreator);
+        for(int i = 0; i < map.width; i++){
+            for(int j = 0; j < map.height; j++){
+                if(map.animals.get(i).get(j).size() >= 2){
+                    Animal p1 = map.animals.get(i).get(j).get(0);
+                    Animal p2 = map.animals.get(i).get(j).get(1);
+                    p1.reproduce(p2, genesCreator);
+                }
             }
         }
     }

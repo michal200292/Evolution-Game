@@ -31,9 +31,9 @@ import java.io.IOException;
 
 public class App extends Application{
 
-    public Stage primaryStage;
+    private Stage primaryStage;
 
-    public GridPane layout;
+    private GridPane layout;
 
     private int pos;
     private Slider widthConf;
@@ -59,7 +59,7 @@ public class App extends Application{
     private ChoiceBox<String> mutationTypeChoice;
     private ChoiceBox<String> animalMovementChoice;
 
-    public Slider createSlider(int minVal, int maxVal, int initVal){
+    private Slider createSlider(int minVal, int maxVal, int initVal){
         Slider slider = new Slider();
         slider.setMin(minVal);
         slider.setMax(maxVal);
@@ -73,7 +73,7 @@ public class App extends Application{
         return slider;
     }
 
-    public void addLabel(String text){
+    private void addLabel(String text){
         Label t = new Label(text);
         layout.add(t, 0, pos, 2, 1);
     }
@@ -139,7 +139,7 @@ public class App extends Application{
         addLabel("Max number of changes during mutation");
         maximumChange = createSlider(0, 40, 20);
         addLabel("Move Delay(milliseconds)");
-        moveDelay = createSlider(10, 300, 150);
+        moveDelay = createSlider(40, 300, 170);
 
         Label title2 = new Label("Simulation variants");
         title2.setMinHeight(50);
@@ -165,7 +165,7 @@ public class App extends Application{
         pos++;
 
         addLabel("Choose configurations to load");
-        ChoiceBox<String> readyConfigChoice = createChoiceBox(new String[]{"Config1"});
+        ChoiceBox<String> readyConfigChoice = createChoiceBox(new String[]{"Config1", "Config2", "Config3", "Config4"});
         pos--;
         Button load = new Button("Load Config");
         GridPane.setHalignment(load, HPos.CENTER);

@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e5f0b2b-cde3-496f-9a1d-16b05f1172ab" name="Changes" comment="Writing to file">
+    <list default="true" id="2e5f0b2b-cde3-496f-9a1d-16b05f1172ab" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/project/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/savedSimulationStatistics/numberOfFiles.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/savedSimulationStatistics/numberOfFiles.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/Maps/AbstractWorldMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/Maps/AbstractWorldMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/SimulationEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/SimulationEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/gui/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/gui/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/gui/GuiElementBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/gui/GuiElementBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/gui/SimulationVisualizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/gui/SimulationVisualizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/gui/TrackerBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/gui/TrackerBox.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +164,9 @@
       <workItem from="1672438758444" duration="336000" />
       <workItem from="1672444656558" duration="9532000" />
       <workItem from="1672502627037" duration="86000" />
-      <workItem from="1672504321334" duration="753000" />
+      <workItem from="1672504321334" duration="1311000" />
+      <workItem from="1672533793723" duration="1734000" />
+      <workItem from="1672538333207" duration="6562000" />
     </task>
     <task id="LOCAL-00001" summary="ProjectStart">
       <created>1670243540086</created>
@@ -301,7 +308,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672439036176</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Writing to file">
+      <created>1672505195477</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1672505195478</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
