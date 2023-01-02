@@ -31,8 +31,6 @@ import java.io.IOException;
 
 public class App extends Application{
 
-    private Stage primaryStage;
-
     private GridPane layout;
 
     private int pos;
@@ -133,11 +131,11 @@ public class App extends Application{
         addLabel("Energy wasted on reproducing");
         reproducingEnergy = createSlider(2, 60, 31);
         addLabel("Length of animal's genome");
-        numberOfGenes = createSlider(4, 40, 22);
+        numberOfGenes = createSlider(4, 30, 17);
         addLabel("Min number of changes during mutation");
-        minimumChange = createSlider(0, 40, 20);
+        minimumChange = createSlider(0, 30, 10);
         addLabel("Max number of changes during mutation");
-        maximumChange = createSlider(0, 40, 20);
+        maximumChange = createSlider(0, 30, 15);
         addLabel("Move Delay(milliseconds)");
         moveDelay = createSlider(40, 300, 170);
 
@@ -198,7 +196,7 @@ public class App extends Application{
         layout.add(start, 0, pos, 5, 1);
 
         Scene scene = new Scene(layout, 600, 900);
-        primaryStage = new Stage();
+        Stage primaryStage = new Stage();
         primaryStage.setScene(scene);
         primaryStage.setMinWidth(600);
         primaryStage.setMaxWidth(600);
@@ -223,7 +221,7 @@ public class App extends Application{
             int eatingEnergy = (int)plantEnergy.getValue();
             int noOfAnimals = (int)numberOfAnimals.getValue();
             if(noOfAnimals > height*width){
-                createPopUpWindow("Too many animals for map of this size\nMaximum number of plants for this map is " + (height*width));
+                createPopUpWindow("Too many animals for map of this size\nMaximum number of animals for this map is " + (height*width));
                 return;
             }
             int startEnergy = (int)animalsStartEnergy.getValue();

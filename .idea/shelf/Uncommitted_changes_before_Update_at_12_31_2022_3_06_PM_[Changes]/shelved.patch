@@ -1,0 +1,352 @@
+Index: src/main/java/org/project/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.project;\r\n\r\n// 3 stycznia\r\n\r\nimport javafx.application.Application;\r\nimport org.project.gui.App;\r\n\r\n\r\npublic class Main {\r\n    public static void main(String[] args){\r\n        Application.launch(App.class, args);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/project/Main.java b/src/main/java/org/project/Main.java
+--- a/src/main/java/org/project/Main.java	(revision e41d5f20f8142c9b03307822e9c7c2959f285eb9)
++++ b/src/main/java/org/project/Main.java	(date 1672495521727)
+@@ -5,9 +5,10 @@
+ import javafx.application.Application;
+ import org.project.gui.App;
+ 
++import java.util.Arrays;
+ 
+ public class Main {
+-    public static void main(String[] args){
++    public static void main(String[] args) {
+         Application.launch(App.class, args);
+     }
+ }
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"2e5f0b2b-cde3-496f-9a1d-16b05f1172ab\" name=\"Changes\" comment=\"Writing to file\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/org/project/gui/GuiElementBox.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/org/project/gui/TrackerBox.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/project/MapObjects/Animal.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/project/MapObjects/Animal.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/project/SimulationEngine.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/project/SimulationEngine.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/project/gui/SimulationVisualizer.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/project/gui/SimulationVisualizer.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ExternalProjectsData\">\r\n    <projectState path=\"$PROJECT_DIR$\">\r\n      <ProjectState />\r\n    </projectState>\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Enum\" />\r\n        <option value=\"Interface\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"PUSH_TAGS\">\r\n      <GitPushTagMode>\r\n        <option name=\"argument\" value=\"--tags\" />\r\n        <option name=\"title\" value=\"All\" />\r\n      </GitPushTagMode>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2IUjz55YSdXLKW3dUx36J5SHc2L\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveClassesOrPackagesDialog.RECENTS_KEY\">\r\n      <recent name=\"org.project.gui\" />\r\n      <recent name=\"org.project.MapObjects\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Application.org.project.Main\">\r\n    <configuration name=\"App\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"org.project.gui.App\" />\r\n      <module name=\"project1.main\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"org.project.gui.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"org.example.Main\" />\r\n      <module name=\"project1.main\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"org.example.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"SimulationVisualizer\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"org.project.gui.SimulationVisualizer\" />\r\n      <module name=\"project1.main\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"org.project.gui.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"org.project.Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"org.project.Main\" />\r\n      <module name=\"project1.main\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"org.project.MapObjects.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.SimulationVisualizer\" />\r\n        <item itemvalue=\"Application.App\" />\r\n        <item itemvalue=\"Application.org.project.Main\" />\r\n        <item itemvalue=\"Application.Main\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"2e5f0b2b-cde3-496f-9a1d-16b05f1172ab\" name=\"Changes\" comment=\"\" />\r\n      <created>1670243318295</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1670243318295</updated>\r\n      <workItem from=\"1670243320620\" duration=\"2593000\" />\r\n      <workItem from=\"1670257115715\" duration=\"28000\" />\r\n      <workItem from=\"1670846752548\" duration=\"1496000\" />\r\n      <workItem from=\"1670849898006\" duration=\"644000\" />\r\n      <workItem from=\"1670850952867\" duration=\"636000\" />\r\n      <workItem from=\"1671270769561\" duration=\"6700000\" />\r\n      <workItem from=\"1671833362936\" duration=\"2126000\" />\r\n      <workItem from=\"1671835549204\" duration=\"169000\" />\r\n      <workItem from=\"1672001864639\" duration=\"11732000\" />\r\n      <workItem from=\"1672047866165\" duration=\"2644000\" />\r\n      <workItem from=\"1672052404325\" duration=\"4305000\" />\r\n      <workItem from=\"1672092694947\" duration=\"615000\" />\r\n      <workItem from=\"1672100185445\" duration=\"9074000\" />\r\n      <workItem from=\"1672152783210\" duration=\"26360000\" />\r\n      <workItem from=\"1672184756901\" duration=\"4824000\" />\r\n      <workItem from=\"1672239937691\" duration=\"30646000\" />\r\n      <workItem from=\"1672311630049\" duration=\"26813000\" />\r\n      <workItem from=\"1672347018347\" duration=\"970000\" />\r\n      <workItem from=\"1672398521842\" duration=\"5277000\" />\r\n      <workItem from=\"1672438758444\" duration=\"336000\" />\r\n      <workItem from=\"1672444656558\" duration=\"9532000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"ProjectStart\">\r\n      <created>1670243540086</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1670243540086</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"ProjectStart\">\r\n      <created>1670243814519</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1670243814519</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"ProjectStart\">\r\n      <created>1670850878790</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1670850878790</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"ProjectStart\">\r\n      <created>1670850980760</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1670850980760</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"GeneCreator\">\r\n      <created>1671749468769</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1671749468769</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"GeneCreator\">\r\n      <created>1671749481572</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1671749481572</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"GeneCreator\">\r\n      <created>1671756021192</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1671756021192</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"GeneCreator\">\r\n      <created>1671833938468</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1671833938468</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"WorldMap\">\r\n      <created>1672002424965</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1672002424965</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"WorldMap\">\r\n      <created>1672051432192</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1672051432193</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"WorldMap\">\r\n      <created>1672105845747</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1672105845747</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\"tak\">\r\n      <created>1672160939519</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1672160939519</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00013\" summary=\"Simulation\">\r\n      <created>1672176819580</created>\r\n      <option name=\"number\" value=\"00013\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1672176819580</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00014\" summary=\"Simulation\">\r\n      <created>1672184833138</created>\r\n      <option name=\"number\" value=\"00014\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1672184833138</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00015\" summary=\"ConfigWindow\">\r\n      <created>1672264306107</created>\r\n      <option name=\"number\" value=\"00015\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00015\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1672264306107</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00016\" summary=\"PauseButton\">\r\n      <created>1672276757980</created>\r\n      <option name=\"number\" value=\"00016\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00016\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1672276757980</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00017\" summary=\"PauseButton\">\r\n      <created>1672316401239</created>\r\n      <option name=\"number\" value=\"00017\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00017\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1672316401239</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00018\" summary=\"PauseButton\">\r\n      <created>1672319161784</created>\r\n      <option name=\"number\" value=\"00018\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00018\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1672319161784</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00019\" summary=\"PauseButton\">\r\n      <created>1672319283898</created>\r\n      <option name=\"number\" value=\"00019\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00019\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1672319283898</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00020\" summary=\"Writing to file\">\r\n      <created>1672439036176</created>\r\n      <option name=\"number\" value=\"00020\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00020\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1672439036176</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"21\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\r\n    <MESSAGE value=\"ProjectStart\" />\r\n    <MESSAGE value=\"GeneCreator\" />\r\n    <MESSAGE value=\"WorldMap\" />\r\n    <MESSAGE value=\"tak\" />\r\n    <MESSAGE value=\"Simulation\" />\r\n    <MESSAGE value=\"ConfigWindow\" />\r\n    <MESSAGE value=\"PauseButton\" />\r\n    <MESSAGE value=\"Writing to file\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Writing to file\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision e41d5f20f8142c9b03307822e9c7c2959f285eb9)
++++ b/.idea/workspace.xml	(date 1672495372899)
+@@ -4,13 +4,15 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="2e5f0b2b-cde3-496f-9a1d-16b05f1172ab" name="Changes" comment="Writing to file">
+-      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/gui/GuiElementBox.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/gui/TrackerBox.java" afterDir="false" />
++    <list default="true" id="2e5f0b2b-cde3-496f-9a1d-16b05f1172ab" name="Changes" comment="ProjectStart">
++      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/Animal.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/GenesCreators/GenesCreators.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/Grass.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/RNG.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/MapObjects/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/MapObjects/Animal.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/SimulationEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/SimulationEngine.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/gui/SimulationVisualizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/gui/SimulationVisualizer.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/Main.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/MoveDirection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/MoveDirection.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -25,84 +27,40 @@
+   <component name="FileTemplateManagerImpl">
+     <option name="RECENT_TEMPLATES">
+       <list>
+-        <option value="Enum" />
+-        <option value="Interface" />
+         <option value="Class" />
++        <option value="Interface" />
+       </list>
+     </option>
+   </component>
+   <component name="Git.Settings">
+-    <option name="PUSH_TAGS">
+-      <GitPushTagMode>
+-        <option name="argument" value="--tags" />
+-        <option name="title" value="All" />
+-      </GitPushTagMode>
+-    </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="MarkdownSettingsMigration">
+     <option name="stateVersion" value="1" />
+   </component>
+   <component name="ProjectId" id="2IUjz55YSdXLKW3dUx36J5SHc2L" />
+-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+-    <ConfirmationsSetting value="2" id="Add" />
+-  </component>
++  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+   <component name="PropertiesComponent">{
+   &quot;keyToString&quot;: {
+-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+-    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;
++    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
++    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+   }
+ }</component>
+-  <component name="RecentsManager">
+-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+-      <recent name="org.project.gui" />
+-      <recent name="org.project.MapObjects" />
+-    </key>
+-  </component>
+   <component name="RunManager" selected="Application.org.project.Main">
+-    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="org.project.gui.App" />
+-      <module name="project1.main" />
+-      <extension name="coverage">
+-        <pattern>
+-          <option name="PATTERN" value="org.project.gui.*" />
+-          <option name="ENABLED" value="true" />
+-        </pattern>
+-      </extension>
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+       <module name="project1.main" />
+       <extension name="coverage">
+         <pattern>
+           <option name="PATTERN" value="org.example.*" />
+-          <option name="ENABLED" value="true" />
+-        </pattern>
+-      </extension>
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+-    <configuration name="SimulationVisualizer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="org.project.gui.SimulationVisualizer" />
+-      <module name="project1.main" />
+-      <extension name="coverage">
+-        <pattern>
+-          <option name="PATTERN" value="org.project.gui.*" />
+           <option name="ENABLED" value="true" />
+         </pattern>
+       </extension>
+@@ -115,7 +73,7 @@
+       <module name="project1.main" />
+       <extension name="coverage">
+         <pattern>
+-          <option name="PATTERN" value="org.project.MapObjects.*" />
++          <option name="PATTERN" value="org.project.*" />
+           <option name="ENABLED" value="true" />
+         </pattern>
+       </extension>
+@@ -125,8 +83,6 @@
+     </configuration>
+     <recent_temporary>
+       <list>
+-        <item itemvalue="Application.SimulationVisualizer" />
+-        <item itemvalue="Application.App" />
+         <item itemvalue="Application.org.project.Main" />
+         <item itemvalue="Application.Main" />
+       </list>
+@@ -140,27 +96,9 @@
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+       <updated>1670243318295</updated>
+-      <workItem from="1670243320620" duration="2593000" />
+-      <workItem from="1670257115715" duration="28000" />
+-      <workItem from="1670846752548" duration="1496000" />
+-      <workItem from="1670849898006" duration="644000" />
+-      <workItem from="1670850952867" duration="636000" />
+-      <workItem from="1671270769561" duration="6700000" />
+-      <workItem from="1671833362936" duration="2126000" />
+-      <workItem from="1671835549204" duration="169000" />
+-      <workItem from="1672001864639" duration="11732000" />
+-      <workItem from="1672047866165" duration="2644000" />
+-      <workItem from="1672052404325" duration="4305000" />
+-      <workItem from="1672092694947" duration="615000" />
+-      <workItem from="1672100185445" duration="9074000" />
+-      <workItem from="1672152783210" duration="26360000" />
+-      <workItem from="1672184756901" duration="4824000" />
+-      <workItem from="1672239937691" duration="30646000" />
+-      <workItem from="1672311630049" duration="26813000" />
+-      <workItem from="1672347018347" duration="970000" />
+-      <workItem from="1672398521842" duration="5277000" />
+-      <workItem from="1672438758444" duration="336000" />
+-      <workItem from="1672444656558" duration="9532000" />
++      <workItem from="1670243320620" duration="431000" />
++      <workItem from="1671406140765" duration="2480000" />
++      <workItem from="1671489411917" duration="7809000" />
+     </task>
+     <task id="LOCAL-00001" summary="ProjectStart">
+       <created>1670243540086</created>
+@@ -169,140 +107,7 @@
+       <option name="project" value="LOCAL" />
+       <updated>1670243540086</updated>
+     </task>
+-    <task id="LOCAL-00002" summary="ProjectStart">
+-      <created>1670243814519</created>
+-      <option name="number" value="00002" />
+-      <option name="presentableId" value="LOCAL-00002" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1670243814519</updated>
+-    </task>
+-    <task id="LOCAL-00003" summary="ProjectStart">
+-      <created>1670850878790</created>
+-      <option name="number" value="00003" />
+-      <option name="presentableId" value="LOCAL-00003" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1670850878790</updated>
+-    </task>
+-    <task id="LOCAL-00004" summary="ProjectStart">
+-      <created>1670850980760</created>
+-      <option name="number" value="00004" />
+-      <option name="presentableId" value="LOCAL-00004" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1670850980760</updated>
+-    </task>
+-    <task id="LOCAL-00005" summary="GeneCreator">
+-      <created>1671749468769</created>
+-      <option name="number" value="00005" />
+-      <option name="presentableId" value="LOCAL-00005" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1671749468769</updated>
+-    </task>
+-    <task id="LOCAL-00006" summary="GeneCreator">
+-      <created>1671749481572</created>
+-      <option name="number" value="00006" />
+-      <option name="presentableId" value="LOCAL-00006" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1671749481572</updated>
+-    </task>
+-    <task id="LOCAL-00007" summary="GeneCreator">
+-      <created>1671756021192</created>
+-      <option name="number" value="00007" />
+-      <option name="presentableId" value="LOCAL-00007" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1671756021192</updated>
+-    </task>
+-    <task id="LOCAL-00008" summary="GeneCreator">
+-      <created>1671833938468</created>
+-      <option name="number" value="00008" />
+-      <option name="presentableId" value="LOCAL-00008" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1671833938468</updated>
+-    </task>
+-    <task id="LOCAL-00009" summary="WorldMap">
+-      <created>1672002424965</created>
+-      <option name="number" value="00009" />
+-      <option name="presentableId" value="LOCAL-00009" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1672002424965</updated>
+-    </task>
+-    <task id="LOCAL-00010" summary="WorldMap">
+-      <created>1672051432192</created>
+-      <option name="number" value="00010" />
+-      <option name="presentableId" value="LOCAL-00010" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1672051432193</updated>
+-    </task>
+-    <task id="LOCAL-00011" summary="WorldMap">
+-      <created>1672105845747</created>
+-      <option name="number" value="00011" />
+-      <option name="presentableId" value="LOCAL-00011" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1672105845747</updated>
+-    </task>
+-    <task id="LOCAL-00012" summary="tak">
+-      <created>1672160939519</created>
+-      <option name="number" value="00012" />
+-      <option name="presentableId" value="LOCAL-00012" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1672160939519</updated>
+-    </task>
+-    <task id="LOCAL-00013" summary="Simulation">
+-      <created>1672176819580</created>
+-      <option name="number" value="00013" />
+-      <option name="presentableId" value="LOCAL-00013" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1672176819580</updated>
+-    </task>
+-    <task id="LOCAL-00014" summary="Simulation">
+-      <created>1672184833138</created>
+-      <option name="number" value="00014" />
+-      <option name="presentableId" value="LOCAL-00014" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1672184833138</updated>
+-    </task>
+-    <task id="LOCAL-00015" summary="ConfigWindow">
+-      <created>1672264306107</created>
+-      <option name="number" value="00015" />
+-      <option name="presentableId" value="LOCAL-00015" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1672264306107</updated>
+-    </task>
+-    <task id="LOCAL-00016" summary="PauseButton">
+-      <created>1672276757980</created>
+-      <option name="number" value="00016" />
+-      <option name="presentableId" value="LOCAL-00016" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1672276757980</updated>
+-    </task>
+-    <task id="LOCAL-00017" summary="PauseButton">
+-      <created>1672316401239</created>
+-      <option name="number" value="00017" />
+-      <option name="presentableId" value="LOCAL-00017" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1672316401239</updated>
+-    </task>
+-    <task id="LOCAL-00018" summary="PauseButton">
+-      <created>1672319161784</created>
+-      <option name="number" value="00018" />
+-      <option name="presentableId" value="LOCAL-00018" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1672319161784</updated>
+-    </task>
+-    <task id="LOCAL-00019" summary="PauseButton">
+-      <created>1672319283898</created>
+-      <option name="number" value="00019" />
+-      <option name="presentableId" value="LOCAL-00019" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1672319283898</updated>
+-    </task>
+-    <task id="LOCAL-00020" summary="Writing to file">
+-      <created>1672439036176</created>
+-      <option name="number" value="00020" />
+-      <option name="presentableId" value="LOCAL-00020" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1672439036176</updated>
+-    </task>
+-    <option name="localTasksCounter" value="21" />
++    <option name="localTasksCounter" value="2" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -320,15 +125,7 @@
+     </option>
+   </component>
+   <component name="VcsManagerConfiguration">
+-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+     <MESSAGE value="ProjectStart" />
+-    <MESSAGE value="GeneCreator" />
+-    <MESSAGE value="WorldMap" />
+-    <MESSAGE value="tak" />
+-    <MESSAGE value="Simulation" />
+-    <MESSAGE value="ConfigWindow" />
+-    <MESSAGE value="PauseButton" />
+-    <MESSAGE value="Writing to file" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Writing to file" />
++    <option name="LAST_COMMIT_MESSAGE" value="ProjectStart" />
+   </component>
+ </project>
+\ No newline at end of file

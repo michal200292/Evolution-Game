@@ -8,7 +8,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import org.project.MapObjects.Animal;
 
-import java.nio.Buffer;
 import java.util.Arrays;
 
 public class TrackerBox {
@@ -44,7 +43,8 @@ public class TrackerBox {
         stopTracking.setOnAction(event -> {
             trackingBox.setVisible(false);
             visualizer.isTracked = false;
-            visualizer.setColor(visualizer.trackedAnimal.position.x, visualizer.trackedAnimal.position.y, Color.SALMON);
+            if(visualizer.trackedAnimal.energy <= 0) visualizer.setColor(visualizer.trackedAnimal.position.x, visualizer.trackedAnimal.position.y, Color.GRAY);
+            else visualizer.setColor(visualizer.trackedAnimal.position.x, visualizer.trackedAnimal.position.y, Color.SALMON);
         });
     }
 

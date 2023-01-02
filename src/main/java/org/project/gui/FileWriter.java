@@ -23,7 +23,7 @@ public class FileWriter {
 
         File csvFile = new File("src/main/resources/savedSimulationStatistics/Simulation"+number+".csv");
         PrintWriter out = new PrintWriter(csvFile);
-        out.println("Day Number, Animals alive, Empty spots, Number of Plants, Average energy level for living animals, Average life length for dead animals");
+        out.println("Day Number, Animals alive, Empty spots, Number of Plants, Average energy level for living animals, Average life length for dead animals, Dominant genotype");
         for(int[] row : stats){
             String[] strArray = Arrays.stream(row)
                     .mapToObj(String::valueOf)

@@ -1,0 +1,14 @@
+Index: src/main/java/org/project/Animal.java
+===================================================================
+diff --git a/src/main/java/org/project/Animal.java b/src/main/java/org/project/Animal.java
+--- a/src/main/java/org/project/Animal.java	
++++ b/src/main/java/org/project/Animal.java	
+@@ -3,7 +3,7 @@
+ import java.util.Arrays;
+ 
+ public class Animal {
+-    public static int numberOfGenes;
++    public static Integer numberOfGenes;
+     public MoveDirection orientation;
+     public Vector2d position;
+     public int energy;

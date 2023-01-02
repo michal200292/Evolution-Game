@@ -15,7 +15,6 @@ import org.project.GrassFields.AbstractGrassField;
 import org.project.MapObjects.Animal;
 import org.project.Maps.AbstractWorldMap;
 import org.project.SimulationEngine;
-import org.project.Vector2d;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -153,9 +152,16 @@ public class SimulationVisualizer extends Application implements IObserver {
 
     public void update() {
         if(!isPaused) {
+            int[] genotypeCount = new int[8];
+            for(int i = 0; i < 8; i++){
+                genotypeCount[i] = 0;
+            }
             int noOfAnimals = map.animalList.size();
             int sumEnergy = 0;
-            for(Animal x : map.animalList) sumEnergy += x.energy;
+            for(Animal x : map.animalList) {
+                sumEnergy += x.energy;
+                genotypeCount[x.genes[x.activeGene]]++;
+            }
             int noOfPlants = 0;
             int freePlaces = 0;
             for (int i = 0; i < map.width; i++) {
@@ -192,8 +198,12 @@ public class SimulationVisualizer extends Application implements IObserver {
             plot1.updateData(dayNumber, new int[]{noOfAnimals, freePlaces, noOfPlants});
             plot2.updateData(dayNumber, new int[]{averageEnergyLevel});
             plot3.updateData(dayNumber, new int[]{averageLifeLength});
+            int popularGenotype = 0;
+            for(int i = 1; i < 8; i++){
+                if(genotypeCount[popularGenotype] < genotypeCount[i]) popularGenotype = i;
+            }
             if(saveStats){
-                stats.add(new int[]{dayNumber, noOfAnimals, freePlaces, noOfPlants, averageEnergyLevel, averageLifeLength});
+                stats.add(new int[]{dayNumber, noOfAnimals, freePlaces, noOfPlants, averageEnergyLevel, averageLifeLength, popularGenotype});
             }
         }
     }
