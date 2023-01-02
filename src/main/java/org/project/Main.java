@@ -1,7 +1,5 @@
 package org.project;
 
-// 3 stycznia
-
 import javafx.application.Application;
 import org.project.gui.App;
 

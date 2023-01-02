@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e5f0b2b-cde3-496f-9a1d-16b05f1172ab" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/gui/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/gui/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nozkiewicz_projekt.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/gui/GuiElementBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/gui/GuiElementBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/gui/SimulationVisualizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/gui/SimulationVisualizer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +168,7 @@
       <workItem from="1672609698714" duration="1504000" />
       <workItem from="1672619602881" duration="3000" />
       <workItem from="1672626643192" duration="309000" />
-      <workItem from="1672680927101" duration="2242000" />
+      <workItem from="1672680927101" duration="4875000" />
     </task>
     <task id="LOCAL-00001" summary="ProjectStart">
       <created>1670243540086</created>
@@ -328,7 +331,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672682891510</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Finished">
+      <created>1672683283766</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1672683283766</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -355,6 +365,7 @@
     <MESSAGE value="ConfigWindow" />
     <MESSAGE value="PauseButton" />
     <MESSAGE value="Writing to file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Writing to file" />
+    <MESSAGE value="Finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished" />
   </component>
 </project>

@@ -70,8 +70,8 @@ public class SimulationVisualizer extends Application implements IObserver {
         GridPane grid = new GridPane();
         float w = map.width;
         float h = map.height;
-        float boxWidth = 900 / w;
-        float boxHeight = 900 / h;
+        float boxWidth = 850 / w;
+        float boxHeight = 850 / h;
         if(w > h){
             boxHeight *= h / w;
         }

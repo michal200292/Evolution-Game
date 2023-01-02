@@ -2,7 +2,6 @@ package org.project.gui;
 
 import javafx.scene.control.Button;
 import javafx.scene.paint.Color;
-import org.project.Vector2d;
 
 public class GuiElementBox{
     Button button;
@@ -19,7 +18,9 @@ public class GuiElementBox{
         button = new Button();
         this.visualizer = visualizer;
         button.setMinHeight(height);
+        button.setMaxHeight(height);
         button.setMinWidth(width);
+        button.setMaxWidth(width);
         button.setOnAction(event -> {
             if(visualizer.isPaused && !visualizer.isTracked){
                 if(visualizer.map.animals.get(x_cord).get(y_cord).size() > 0){
