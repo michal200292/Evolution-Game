@@ -76,7 +76,7 @@ public class App extends Application{
         layout.add(t, 0, pos, 2, 1);
     }
 
-    public ChoiceBox<String> createChoiceBox(String[] choices){
+    private ChoiceBox<String> createChoiceBox(String[] choices){
         ChoiceBox<String> choiceBox = new ChoiceBox<>(FXCollections.observableArrayList(choices));
         choiceBox.setValue(choices[0]);
         choiceBox.setMinWidth(150);
@@ -85,7 +85,7 @@ public class App extends Application{
         return choiceBox;
     }
 
-    public void createPopUpWindow(String message){
+    private void createPopUpWindow(String message){
         Stage popUp = new Stage();
         StackPane pane = new StackPane();
         Label errorMessage = new Label(message);
@@ -284,7 +284,7 @@ public class App extends Application{
 
         });
     }
-    public void loadConfig(String fileName) throws FileNotFoundException {
+    private void loadConfig(String fileName) throws FileNotFoundException {
         int[] conf = new int[17];
         try {
             BufferedReader reader = new BufferedReader(new FileReader("src/main/resources/configurations/" + fileName + ".txt"));

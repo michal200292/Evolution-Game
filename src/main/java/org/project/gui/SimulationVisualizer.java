@@ -23,26 +23,24 @@ import java.util.List;
 
 public class SimulationVisualizer extends Application implements IObserver {
 
-    public LinePlot plot1;
-    public LinePlot plot2;
-    public LinePlot plot3;
-    public SimulationEngine engine;
-    public AbstractWorldMap map;
+    private LinePlot plot1;
+    private LinePlot plot2;
+    private LinePlot plot3;
+    private final SimulationEngine engine;
+    protected AbstractWorldMap map;
     public int dayNumber;
 
     boolean saveStats;
     Button pauseButton;
-    public boolean isPaused;
+    protected boolean isPaused;
 
-    public boolean isTracked;
+    protected boolean isTracked;
 
-    public Animal trackedAnimal;
+    protected Animal trackedAnimal;
 
-    public TrackerBox tracker;
+    protected TrackerBox tracker;
 
-    public AbstractGrassField grassField;
-
-    public GridPane grid;
+    protected AbstractGrassField grassField;
 
     Scene scene;
 
@@ -69,7 +67,7 @@ public class SimulationVisualizer extends Application implements IObserver {
         engine.addObserver(this);
         Thread engineThread = new Thread(engine);
         engineThread.start();
-        grid = new GridPane();
+        GridPane grid = new GridPane();
         float w = map.width;
         float h = map.height;
         float boxWidth = 900 / w;
